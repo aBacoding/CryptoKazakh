@@ -1,38 +1,58 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1c121f;
+	font-family: 'Oxanium', cursive;
+	font-family: 'Work Sans', sans-serif;
+}
+
+.container {
+	position: relative;
+	max-width: 1397px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+a {
+	color: #f5fbf2;
+	font-family: 'Work Sans';
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 0.36px;
+	text-decoration: none;
+}
+
+.main_title,
+.title {
+	color: #f5fbf2;
+	font-family: 'Oxanium';
+	font-size: clamp(18px, 5vw, 85px);
+	font-weight: 700;
+	line-height: 130px;
+}
+
+.title {
 	text-align: center;
 }
 
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
+.paragraph {
+	color: #9b9e9a;
+	font-family: 'Work Sans';
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 35.452px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+.title {
+	font-size: clamp(18px, 6vw, 64px);
 }
 
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
-}
-
-.App-link {
-	color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+span {
+	color: #ffce4e;
 }

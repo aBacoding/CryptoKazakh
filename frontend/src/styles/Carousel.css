@@ -1,0 +1,199 @@
+/* Carousel styling */
+
+.carousel_container {
+	position: relative;
+	max-width: 1500px;
+	width: 100%;
+	height: 830px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	z-index: 2;
+}
+
+.home_section_4 .carousel_container {
+	height: 570px;
+}
+
+.home_section_5 .carousel_container {
+	height: 650px;
+	overflow: hidden;
+}
+
+.left-handle,
+.right-handle {
+	position: absolute;
+	top: 300px;
+	z-index: 1;
+}
+
+.left-handle {
+	left: 0;
+}
+
+.right-handle {
+	right: 5px;
+}
+
+.slider {
+	transition: all 0.4s;
+	padding: 0 1%;
+	display: flex;
+	align-items: center;
+	gap: 42px;
+	margin-bottom: 84px;
+}
+
+.carousel_card,
+.carousel_card2,
+.carousel_card3 {
+	position: relative;
+	width: 460px;
+	padding: 30px;
+	background: #3d2942;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.card_description_inner {
+	margin-bottom: 28px;
+}
+
+.card_description_inner,
+.inner_content,
+.virtual_price {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card_description_inner .paragraph {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	color: #76607a;
+}
+
+.inner_content {
+	gap: 19px;
+}
+
+.virtual_img {
+	width: 400px;
+	height: 359px;
+	margin-bottom: 28px;
+}
+
+.author_title {
+	color: #f5fbf2;
+	font-family: 'Work Sans';
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 35.452px;
+}
+
+.author_description .paragraph {
+	font-size: 20px;
+	line-height: 35.452px;
+}
+
+.virtual_price {
+	margin-bottom: 50px;
+}
+
+.virtual_price .paragraph {
+	font-size: 24px;
+}
+
+.crypto_price {
+	color: #f5fbf2;
+	font-family: 'Oxanium';
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 35.452px;
+}
+
+.header_btn.crypto_btn {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #fde8b3;
+	background: rgba(233, 215, 167, 0.1);
+}
+
+.header_btn.crypto_btn:hover {
+	background: #fde8b3;
+	color: #3d2942;
+}
+
+.timer_content {
+	position: absolute;
+	top: 324px;
+	width: 194px;
+	padding: 16px 47px;
+	opacity: 0.95;
+	background: linear-gradient(
+		177deg,
+		#8613a5 0%,
+		rgba(250, 250, 250, 0.65) 100%
+	);
+	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.12);
+	backdrop-filter: blur(22.5px);
+}
+
+/* Slider 3 */
+
+.slider3 {
+	position: relative;
+	z-index: 999;
+}
+
+.slider3 .header_btn.crypto_btn {
+	opacity: 0;
+	width: 50%;
+	position: absolute;
+	left: 24%;
+	top: 30%;
+	background: #ffce4e;
+	color: black;
+	transition: all 0.5s ease;
+}
+
+.slider3 .virtual_img {
+	transition: all 0.5s ease;
+}
+
+.slider3 .header_btn.crypto_btn:hover {
+	color: white;
+}
+
+.slider3 .carousel_card3 {
+	cursor: pointer;
+	height: 504px;
+}
+
+.slider3 .carousel_card3:hover .header_btn.crypto_btn {
+	opacity: 1;
+}
+
+.slider3 .carousel_card3:hover .virtual_img {
+	filter: blur(3px);
+}
+
+.slider3 .virtual_price {
+	margin: 0;
+}
+
+.carousel_card3 .virtual_img {
+	width: 351px;
+	height: 306px;
+}
+
+.home_section_5 {
+	padding: 40px 0;
+	position: relative;
+	background: #251928;
+	z-index: 0;
+}
