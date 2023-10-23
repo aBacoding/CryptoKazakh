@@ -77,6 +77,9 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ### Create NFT
 ![CreateNft](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c340a5b-d4a4-47d6-8758-fb07a47f886d)
 
+### Details
+![Details](https://github.com/aBacoding/CryptoKazakh/assets/97093590/6d3956ea-5d67-4c80-bbcc-385929bee364)
+
 ### 404 Page for Laptop
 ![404 Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/56f2c8ac-e2fd-47c2-9242-3a0cd15b7412)
 
