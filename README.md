@@ -74,6 +74,9 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ### Design for Phone
 ![Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/236bf35d-a1fc-45a8-9c1d-aabe37ced7f3)
 
+### Create NFT
+![CreateNft](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c340a5b-d4a4-47d6-8758-fb07a47f886d)
+
 ### 404 Page for Laptop
 ![404 Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/56f2c8ac-e2fd-47c2-9242-3a0cd15b7412)
 
