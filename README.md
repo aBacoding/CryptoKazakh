@@ -5,7 +5,7 @@ Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace d
 ![Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/f7915afd-fa90-44bc-be95-464e12ac1728)
 
 ## Design for Phone
-![Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/79776774-1453-4160-bd1f-5c0c0af46ee9)
+![Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/b8ba55c6-6f27-4ef9-bf67-edca8b77bdd3)
 
 ## 404 Page for Laptop
 ![404 Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/56f2c8ac-e2fd-47c2-9242-3a0cd15b7412)
