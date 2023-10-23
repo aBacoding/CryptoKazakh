@@ -35,12 +35,12 @@ const Header: React.FC = () => {
 								{/* Replace # with actual links */}
 								<li>
 									<a className='nav_list' href='#'>
-										Creators
+										Collections
 									</a>
 								</li>
 								<li>
 									<a className='nav_list' href='#'>
-										Community
+										Creators
 									</a>
 								</li>
 							</ul>
@@ -79,12 +79,12 @@ const Header: React.FC = () => {
 								{/* Replace # with actual links */}
 								<li>
 									<a className='nav_list' href='#'>
-										Creators
+										Collections
 									</a>
 								</li>
 								<li>
 									<a className='nav_list' href='#'>
-										Community
+										Creators
 									</a>
 								</li>
 							</ul>
