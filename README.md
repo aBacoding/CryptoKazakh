@@ -59,7 +59,7 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ### Ready for Next NFT Drop?
 - **Purpose**: Engage users in upcoming events or NFT drops by capturing their email for newsletters.
 - **User Interactions**: 
-  - This section is static with no direct user interactions.
+  - This section is for users to receive the next drop nft on the entered mail.
 - **Expected User Flow**: The user might glance at the logo or copyright information, recognizing the brand or ensuring the site's legitimacy. There's no further action required from the user in this section.
 
 ### Footer Logo and Copyright Text
