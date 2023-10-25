@@ -63,10 +63,7 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 - **Expected User Flow**: The user might glance at the logo or copyright information, recognizing the brand or ensuring the site's legitimacy. There's no further action required from the user in this section.
 
 ### Footer Logo and Copyright Text
-- **Purpose**: The very bottom of the page provides branding for the platform and offers essential legal information, such as the
-- **User Interactions**: 
-  - Input email and "Subscribe" button: Sign up for newsletters and notifications.
-- **Expected User Flow**: Users willing to stay updated can enter their email and await further communications regarding new NFT drops.
+- **Purpose**: The very bottom of the page provides branding for the platform and offers essential legal information.
 
 ### Design for Laptop
 ![Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/f7915afd-fa90-44bc-be95-464e12ac1728)
