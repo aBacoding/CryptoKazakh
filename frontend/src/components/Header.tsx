@@ -20,9 +20,7 @@ const Header: React.FC = () => {
 				<div className='header_section'>
 					<a href='#' className='logo'>
 						{' '}
-						{/* Replace # with your homepage link */}
 						<img src='./assets/image/logo.png' alt='logo' />{' '}
-						{/* Ensure path is correct */}
 					</a>
 					<div className='menu_section'>
 						<nav className='navigation'>
@@ -32,7 +30,7 @@ const Header: React.FC = () => {
 										Explore
 									</a>
 								</li>{' '}
-								{/* Replace # with actual links */}
+								{}
 								<li>
 									<a className='nav_list' href='#'>
 										Collections
@@ -49,7 +47,6 @@ const Header: React.FC = () => {
 							<a className='header_btn' href='#'>
 								Connect Wallet
 							</a>{' '}
-							{/* Replace # with actual link */}
 						</div>
 					</div>
 					<div className='hamburger_menu'>
@@ -76,7 +73,7 @@ const Header: React.FC = () => {
 										Explore
 									</a>
 								</li>{' '}
-								{/* Replace # with actual links */}
+								{}
 								<li>
 									<a className='nav_list' href='#'>
 										Collections

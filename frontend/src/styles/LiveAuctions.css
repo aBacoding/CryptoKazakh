@@ -1,0 +1,60 @@
+/* Live Auctions */
+
+.home_section_2 .title_content {
+	margin-bottom: 60px;
+	padding-bottom: 60px;
+}
+
+.title_section {
+	margin-bottom: 150px;
+	position: relative;
+}
+
+.title_content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 32px;
+}
+
+.title_img {
+	position: absolute;
+	left: 32%;
+	z-index: -1;
+}
+
+.carousel_buttons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 28px;
+}
+
+.carousel_btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 32px;
+	border-radius: 50%;
+	border: none;
+	width: 54px;
+	height: 54px;
+	color: black;
+	background: #f5fbf2;
+	opacity: 0.25;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	margin-bottom: 42px;
+}
+
+.carousel_btn:hover {
+	opacity: 1;
+}
+
+.blur_image {
+	position: absolute;
+	left: 0;
+	top: -300px;
+	z-index: -1;
+}

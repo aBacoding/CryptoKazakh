@@ -53,8 +53,8 @@
 	opacity: 0.95;
 	background: linear-gradient(
 		145deg,
-		rgba(29, 28, 27, 0.09) 0%,
-		rgba(250, 250, 250, 0.9) 100%
+		rgba(121, 79, 0, 0.87) 0%,
+		rgba(250, 250, 250, 0.836) 100%
 	);
 	box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.12);
 	backdrop-filter: blur(22.5px);
@@ -87,7 +87,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 555px;
+	width: 558px;
 	z-index: 1;
 }
 

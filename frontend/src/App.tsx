@@ -2,6 +2,7 @@ import './App.css'
 
 import Header from './components/Header'
 import Home from './components/Home'
+import LiveAuctions from './components/LiveAuctions'
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 			</header>
 			<main className='main'>
 				<Home />
+				<LiveAuctions />
 			</main>
 		</div>
 	)

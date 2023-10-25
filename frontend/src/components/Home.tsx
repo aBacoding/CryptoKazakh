@@ -16,7 +16,7 @@ const Home: React.FC = () => {
 				<div className='home_section_content'>
 					<div className='home_section_description'>
 						<h1 className='main_title'>
-							Create, Buy and Sell the <span>Best NFTs!</span>
+							Create, Buy and Sell the <span>Kazakh NFTs!</span>
 						</h1>
 						<div className='btn_section'>
 							<a className='header_btn content_btn' href='#'>
