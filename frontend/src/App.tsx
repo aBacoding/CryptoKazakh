@@ -2,6 +2,7 @@ import './App.css'
 
 import Header from './components/Header'
 import Home from './components/Home'
+import HowItWorks from './components/HowItWorks'
 import LiveAuctions from './components/LiveAuctions'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 			<main className='main'>
 				<Home />
 				<LiveAuctions />
+				<HowItWorks />
 			</main>
 		</div>
 	)

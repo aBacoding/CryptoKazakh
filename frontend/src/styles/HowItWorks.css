@@ -1,0 +1,55 @@
+/* HowItWorks */
+
+.home_section_3 {
+	margin-bottom: 246px;
+}
+
+.work_list_content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.home_section_3 .title {
+	margin-bottom: 80px;
+}
+
+.work_list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.work_list_img {
+	width: 106px;
+	height: 106px;
+	padding: 29px;
+	background: #372839;
+	border-radius: 50%;
+	margin-bottom: 32px;
+	cursor: pointer;
+}
+
+.work_list_img img {
+	transition: 1s;
+	cursor: pointer;
+}
+
+.work_list_img:hover img {
+	transform: rotate(360deg);
+}
+
+.work_list h2 {
+	color: #ffce4e;
+	font-family: 'Work Sans';
+	font-size: 24px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.blur_image3 {
+	position: absolute;
+	top: 50px;
+	left: 18%;
+}
