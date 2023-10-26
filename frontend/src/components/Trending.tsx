@@ -136,7 +136,7 @@ const cards: CarouselCardProps[] = [
 	},
 	{
 		imageUrl: './assets/image/trending5.png',
-		authorImageUrl: './assets/image/author.png',
+		authorImageUrl: './assets/image/author4.png',
 		title: 'Kazakh Detective',
 		author: 'TnnL',
 		price: 0.01,

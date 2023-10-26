@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Home from './components/Home'
 import HowItWorks from './components/HowItWorks'
 import LiveAuctions from './components/LiveAuctions'
+import NFTDropSubscription from './components/NFTDropSubscription'
+import TopCreators from './components/TopCreators'
 import Trending from './components/Trending'
 import TrendingCollections from './components/TrendingCollections'
 import './styles/Carousel.css'
@@ -22,6 +24,8 @@ function App() {
 				<HowItWorks />
 				<TrendingCollections />
 				<Trending />
+				<TopCreators />
+				<NFTDropSubscription />
 			</main>
 		</div>
 	)
