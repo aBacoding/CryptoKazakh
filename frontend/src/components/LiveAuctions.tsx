@@ -1,49 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react'
+import '../styles/Carousel.css'
 import '../styles/LiveAuctions.css'
 
 const carouselData = [
 	{
-		id: 0,
 		title: 'Kazakh Warrior',
 		imgSrc: './assets/image/card1.png',
 		authorImg: './assets/image/author.png',
-		author: '@aBa',
-		rateImg: './assets/image/rate.png',
-		rate: 67,
-		bid: '2.77 ETH',
+		author: 'aBa',
+		bid: 2.77,
 		endTime: new Date('2023-10-26T24:00:00Z'),
 	},
 	{
-		id: 1,
 		title: 'Kazakh fields',
 		imgSrc: './assets/image/card2.png',
 		authorImg: './assets/image/author2.png',
-		author: '@ferrum',
-		rateImg: './assets/image/rate.png',
-		rate: 59,
-		bid: '0.44 ETH',
+		author: 'ferrum',
+		bid: 0.44,
 		endTime: new Date('2023-10-27T14:00:00Z'),
 	},
 	{
-		id: 2,
 		title: 'KZAnime',
 		imgSrc: './assets/image/card3.png',
 		authorImg: './assets/image/author3.png',
-		author: '@7eyAzat',
-		rateImg: './assets/image/rate.png',
-		rate: 99,
-		bid: '0.19 ETH',
+		author: '7eyAzat',
+		bid: 0.19,
 		endTime: new Date('2023-10-26T18:00:00Z'),
 	},
 	{
-		id: 3,
 		title: 'Steppes Elegy',
 		imgSrc: './assets/image/card4.png',
 		authorImg: './assets/image/author4.png',
-		author: '@TnnL',
-		rateImg: './assets/image/rate.png',
-		rate: 32,
-		bid: '12.99 ETH',
+		author: 'TnnL',
+		bid: 1.99,
 		endTime: new Date('2023-10-27T18:00:00Z'),
 	},
 ]
@@ -165,16 +154,13 @@ const LiveAuctions: React.FC = () => {
 										<img src={card.authorImg} alt='author' /> {}
 										<div className='author_description'>
 											<h3 className='author_title'>{card.title}</h3>
-											<p className='paragraph'>by {card.author}</p>
+											<p className='paragraph'>by @{card.author}</p>
 										</div>
 									</div>
-									<p className='paragraph'>
-										<img src={card.rateImg} alt='rate' /> {card.rate}
-									</p>
 								</div>
 								<div className='virtual_price'>
 									<p className='paragraph'>Current Bid</p>
-									<h4 className='crypto_price'>{card.bid}</h4>
+									<h4 className='crypto_price'>{card.bid} ETH</h4>
 								</div>
 								<a className='header_btn crypto_btn' href='#'>
 									Place a bid

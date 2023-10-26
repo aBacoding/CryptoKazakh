@@ -1,5 +1,6 @@
 // HowItWorks.tsx
 import React from 'react'
+import '../styles/Carousel.css'
 import '../styles/HowItWorks.css'
 
 interface WorkItemProps {

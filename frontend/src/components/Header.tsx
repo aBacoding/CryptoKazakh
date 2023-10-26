@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import '../styles/Carousel.css'
 import '../styles/Header.css'
-import '../styles/Media.css'
 
 const Header: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,18 +25,23 @@ const Header: React.FC = () => {
 							<ul>
 								<li>
 									<a className='nav_list' href='#'>
-										Explore
+										Home
 									</a>
 								</li>{' '}
 								{}
 								<li>
 									<a className='nav_list' href='#'>
-										Collections
+										Explore
 									</a>
 								</li>
 								<li>
 									<a className='nav_list' href='#'>
-										Creators
+										Create
+									</a>
+								</li>
+								<li>
+									<a className='nav_list' href='#'>
+										MyNFT's
 									</a>
 								</li>
 							</ul>
@@ -82,6 +85,11 @@ const Header: React.FC = () => {
 								<li>
 									<a className='nav_list' href='#'>
 										Creators
+									</a>
+								</li>
+								<li>
+									<a className='nav_list' href='#'>
+										MyNFT's
 									</a>
 								</li>
 							</ul>

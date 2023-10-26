@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 // Fixed end-time for the auction (for example, October 30, 2023, 18:00:00 GMT)
 const END_TIME = new Date('2023-10-26T21:00:00Z')
+const price = 0.85
 
 const getTimeDifference = (end: Date) => {
 	const now = new Date()
@@ -32,7 +33,7 @@ const BidContent: React.FC = () => {
 		<div className='bid_content'>
 			<div className='cripto_title'>
 				<p className='rate_title rate_paragraph'>Current bid</p>
-				<h2 className='rate_title rate_title_2'>0.85 ETH</h2>
+				<h2 className='rate_title rate_title_2'>{price} ETH</h2>
 			</div>
 			<div className='time_title'>
 				<p className='rate_title rate_paragraph'>Ends in</p>

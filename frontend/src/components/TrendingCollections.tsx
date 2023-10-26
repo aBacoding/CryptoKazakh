@@ -14,28 +14,28 @@ const carouselItems: CarouselData[] = [
 	{
 		cardImg: './assets/image/coll.png',
 		authorImg: './assets/image/author.png',
-		authorName: '@aBa',
+		authorName: 'aBa',
 		/* rateImg: './assets/image/rate.png',
 		rateType: 'ERC-721', */
 	},
 	{
 		cardImg: './assets/image/coll2.png',
 		authorImg: './assets/image/author2.png',
-		authorName: '@ferrum',
+		authorName: 'ferrum',
 		/* rateImg: './assets/image/rate.png',
 		rateType: 'ERC-721', */
 	},
 	{
 		cardImg: './assets/image/coll3.png',
 		authorImg: './assets/image/author3.png',
-		authorName: '@7eyAzat',
+		authorName: '7eyAzat',
 		/* rateImg: './assets/image/rate.png',
 		rateType: 'ERC-721', */
 	},
 	{
 		cardImg: './assets/image/coll4.png',
 		authorImg: './assets/image/author4.png',
-		authorName: '@TnnL',
+		authorName: 'TnnL',
 		/* rateImg: './assets/image/rate.png',
 		rateType: 'ERC-721', */
 	},
@@ -108,7 +108,7 @@ const TrendingCollections: React.FC = () => {
 								<div className='card_description_inner'>
 									<div className='inner_content'>
 										<img src={item.authorImg} alt='author' />
-										<h3 className='author_title'>{item.authorName}</h3>
+										<h3 className='author_title'>@{item.authorName}</h3>
 									</div>
 									<p className='paragraph'>
 										{/* <img src={ item.rateImg } alt='rate' >  */}
