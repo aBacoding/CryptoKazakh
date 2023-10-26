@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/Carousel.css'
 import '../styles/Home.css'
-import '../styles/Media.css'
 
 // Subcomponents
 import ArtistContent from './ArtistContent'

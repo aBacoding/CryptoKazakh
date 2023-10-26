@@ -1,4 +1,5 @@
 import './App.css'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './components/Home'
 import HowItWorks from './components/HowItWorks'
@@ -27,6 +28,9 @@ function App() {
 				<TopCreators />
 				<NFTDropSubscription />
 			</main>
+			<footer className='footer'>
+				<Footer />
+			</footer>
 		</div>
 	)
 }
