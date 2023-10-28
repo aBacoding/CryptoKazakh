@@ -70,6 +70,8 @@ const LiveAuctions: React.FC = () => {
 	}, [])
 
 	const sliderRef = useRef<HTMLDivElement>(null)
+	const leftButtonRef = useRef<HTMLButtonElement>(null)
+	const rightButtonRef = useRef<HTMLButtonElement>(null)
 
 	useEffect(() => {
 		const slider = sliderRef.current
@@ -84,21 +86,17 @@ const LiveAuctions: React.FC = () => {
 		}
 
 		const leftHandleClick = () => {
-			if (sliderIndex === 0) {
-				sliderIndex = (sliderIndex - 3 + numCards) % numCards
-			} else {
-				sliderIndex = (sliderIndex - 1 + numCards) % numCards
-			}
+			sliderIndex = (sliderIndex - 1 + numCards) % numCards
 			updateSliderPosition()
 		}
 
 		const rightHandleClick = () => {
-			sliderIndex = (sliderIndex + 1) % (numCards - 2)
+			sliderIndex = (sliderIndex + 1) % numCards
 			updateSliderPosition()
 		}
 
-		const leftButton = document.querySelector('.left-handle')
-		const rightButton = document.querySelector('.right-handle')
+		const leftButton = leftButtonRef.current
+		const rightButton = rightButtonRef.current
 
 		if (leftButton) {
 			leftButton.addEventListener('click', leftHandleClick)
@@ -137,10 +135,10 @@ const LiveAuctions: React.FC = () => {
 			</div>
 			<div className='carousel_container'>
 				<div className='carousel_buttons'>
-					<button className='carousel_btn left-handle'>
+					<button ref={leftButtonRef} className='carousel_btn left-handle'>
 						<i className='bx bx-left-arrow-alt'></i>
 					</button>
-					<button className='carousel_btn right-handle'>
+					<button ref={rightButtonRef} className='carousel_btn right-handle'>
 						<i className='bx bx-right-arrow-alt'></i>
 					</button>
 				</div>

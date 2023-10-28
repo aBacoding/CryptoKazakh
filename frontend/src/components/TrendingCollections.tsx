@@ -42,30 +42,34 @@ const carouselItems: CarouselData[] = [
 ]
 
 const TrendingCollections: React.FC = () => {
-	const slider2Ref = useRef<HTMLDivElement | null>(null)
-	const [sliderIndex2, setSliderIndex2] = useState(0)
-	const cardWidth2 = 500
+	const sliderRef = useRef<HTMLDivElement | null>(null)
+	const [sliderIndex, setSliderIndex] = useState(0)
+	const cardWidth = 500
 
 	useEffect(() => {
-		if (slider2Ref.current) {
-			slider2Ref.current.style.transform = `translateX(-${
-				sliderIndex2 * cardWidth2
+		if (sliderRef.current) {
+			sliderRef.current.style.transform = `translateX(-${
+				sliderIndex * cardWidth
 			}px)`
 		}
-	}, [sliderIndex2])
+	}, [sliderIndex])
 
 	const handleLeftClick = () => {
-		const numCards2 = carouselItems.length
-		if (sliderIndex2 === 0) {
-			setSliderIndex2((sliderIndex2 - 3 + numCards2) % numCards2)
+		const numCards = carouselItems.length
+		if (sliderIndex > 0) {
+			setSliderIndex(sliderIndex - 1)
 		} else {
-			setSliderIndex2((sliderIndex2 - 1 + numCards2) % numCards2)
+			setSliderIndex(numCards - 1) // Go to the last card
 		}
 	}
 
 	const handleRightClick = () => {
-		const numCards2 = carouselItems.length
-		setSliderIndex2((sliderIndex2 + 1) % (numCards2 - 2))
+		const numCards = carouselItems.length
+		if (sliderIndex < numCards - 1) {
+			setSliderIndex(sliderIndex + 1)
+		} else {
+			setSliderIndex(0) // Go to the first card
+		}
 	}
 
 	return (
@@ -100,7 +104,7 @@ const TrendingCollections: React.FC = () => {
 				</div>
 			</div>
 			<div className='carousel_container'>
-				<div className='slider slider2' ref={slider2Ref}>
+				<div className='slider slider2' ref={sliderRef}>
 					{carouselItems.map((item, index) => (
 						<div key={index} className='carousel_card2'>
 							<img className='virtual_img' src={item.cardImg} alt='card' />

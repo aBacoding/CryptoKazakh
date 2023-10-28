@@ -21,12 +21,7 @@ const NFTDropSubscription: React.FC = () => {
 			<div className='content_section'>
 				<h2 className='title'>Ready for Next NFT Drop?</h2>
 				<form className='contact_form' onSubmit={handleFormSubmit}>
-					<input
-						type='email'
-						name='mail'
-						placeholder='email@gmail.com'
-						id='mail_input'
-					/>
+					<input type='email' name='mail' placeholder='email' id='mail_input' />
 					<button
 						type='submit'
 						name='email_btn'

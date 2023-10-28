@@ -3,6 +3,7 @@
 .home_section_7 {
 	position: relative;
 	top: 5px;
+	width: 100%;
 }
 
 .content_section {
@@ -40,7 +41,9 @@
 #mail_input {
 	background: transparent;
 	border: 1px solid #e7b226;
-	width: 410px;
+	width: 70%;
+	max-width: 410px;
+	padding-left: 5%;
 	height: 71.5px;
 	border-right: none;
 	padding: 30px 0 30px 53px;

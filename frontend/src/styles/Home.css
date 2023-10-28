@@ -122,10 +122,10 @@
 
 .blur_img {
 	position: absolute;
-	width: 710px;
+	width: 630px;
 	height: 1063px;
 	top: -285px;
-	right: -82px;
+	right: -40px;
 	z-index: -1;
 }
 

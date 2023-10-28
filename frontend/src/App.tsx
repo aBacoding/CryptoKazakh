@@ -9,11 +9,11 @@ import TopCreators from './components/TopCreators'
 import Trending from './components/Trending'
 import TrendingCollections from './components/TrendingCollections'
 import './styles/Carousel.css'
+import './styles/Media.css'
 
 function App() {
 	return (
 		<div className='App'>
-			{' '}
 			<header>
 				<div className='header'>
 					<Header />

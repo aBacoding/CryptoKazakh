@@ -13,7 +13,7 @@ interface CarouselCardProps {
 const Trending: React.FC = () => {
 	const [sliderIndex, setSliderIndex] = useState(0)
 	const sliderRef = useRef<HTMLDivElement | null>(null)
-	const cardWidth = 260
+	const cardWidth = 460
 	const numCards = cards.length
 
 	const updateSliderPosition = () => {
@@ -25,16 +25,20 @@ const Trending: React.FC = () => {
 	}
 
 	const handleLeftClick = () => {
-		if (sliderIndex === 0) {
-			setSliderIndex((sliderIndex - 2 + numCards) % numCards)
+		if (sliderIndex > 0) {
+			setSliderIndex(sliderIndex - 1)
 		} else {
-			setSliderIndex((sliderIndex - 1 + numCards) % numCards)
+			setSliderIndex(numCards - 1)
 		}
 		updateSliderPosition()
 	}
 
 	const handleRightClick = () => {
-		setSliderIndex((sliderIndex + 1) % (numCards - 1))
+		if (sliderIndex < numCards - 1) {
+			setSliderIndex(sliderIndex + 1)
+		} else {
+			setSliderIndex(0)
+		}
 		updateSliderPosition()
 	}
 

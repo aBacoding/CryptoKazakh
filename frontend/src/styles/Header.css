@@ -95,6 +95,11 @@
 	transition: transform 0.5s ease;
 }
 
+.hamburger_menu_navigation .header_btn {
+	text-align: center;
+	display: inline-block;
+}
+
 .hamburger_menu_navigation.open {
 	transform: translateX(0); /* Show menu when it has the class "open" */
 }

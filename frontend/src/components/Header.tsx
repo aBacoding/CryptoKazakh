@@ -41,7 +41,7 @@ const Header: React.FC = () => {
 								</li>
 								<li>
 									<a className='nav_list' href='#'>
-										MyNFT's
+										MyNFTs
 									</a>
 								</li>
 							</ul>
@@ -89,10 +89,13 @@ const Header: React.FC = () => {
 								</li>
 								<li>
 									<a className='nav_list' href='#'>
-										MyNFT's
+										MyNFTs
 									</a>
 								</li>
 							</ul>
+							<a className='header_btn' href='#'>
+								Connect Wallet
+							</a>
 						</nav>
 					</div>
 				</div>
