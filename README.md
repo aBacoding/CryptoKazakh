@@ -66,7 +66,7 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 - **Purpose**: The very bottom of the page provides branding for the platform and offers essential legal information.
 
 ### Design for FullHD Screen (Laptop, Computer, etc.)
-![fullhd](https://github.com/aBacoding/CryptoKazakh/assets/97093590/134fd87f-6d6c-4245-ade4-bfc77c13bc8f)
+![fullhd](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7b66f191-6788-4267-9874-1fa3a6b49e66)
 
 ### Design for Phone
 ![phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c564874-cb18-4db6-b546-6ce75d2eab51)
