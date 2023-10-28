@@ -65,20 +65,26 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ### Footer Logo and Copyright Text
 - **Purpose**: The very bottom of the page provides branding for the platform and offers essential legal information.
 
-### Design for Laptop
-![Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/f7915afd-fa90-44bc-be95-464e12ac1728)
+### Design for FullHD Screen (Laptop, Computer, etc.)
+![FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/e0ea8e6c-7124-4872-9513-79c0aa597685)
+
+### Design for Tablet
+![Tablet](https://github.com/aBacoding/CryptoKazakh/assets/97093590/70c27cd3-64c6-462f-985a-73e8fc65f435)
 
 ### Design for Phone
-![Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/236bf35d-a1fc-45a8-9c1d-aabe37ced7f3)
+![Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/a0215c56-033e-404f-a009-2343e0697833)
+
+### Hamburger menu
+![Hamburger Menu](https://github.com/aBacoding/CryptoKazakh/assets/97093590/437029d4-db40-461f-a76b-28a42e31ec3f)
 
 ### Create NFT
-![CreateNft](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c340a5b-d4a4-47d6-8758-fb07a47f886d)
+![CreateNFT](https://github.com/aBacoding/CryptoKazakh/assets/97093590/2751a6e7-8f36-405a-a11f-8a4a1f8f8154)
 
 ### Details
-![Details](https://github.com/aBacoding/CryptoKazakh/assets/97093590/6d3956ea-5d67-4c80-bbcc-385929bee364)
+![DetailPage](https://github.com/aBacoding/CryptoKazakh/assets/97093590/818ad0ad-3348-44b7-8e10-5a944fb14e38)
 
-### 404 Page for Laptop
-![404 Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/56f2c8ac-e2fd-47c2-9242-3a0cd15b7412)
+### 404 Page for FullHD Screen (Laptop, Computer, etc.)
+![404 Page](https://github.com/aBacoding/CryptoKazakh/assets/97093590/b496bbb6-c0b5-4ff2-88d3-6e1165280444)
 
-### 404 Page for Phone
-![404 Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/d67b55c3-4a71-44c6-bf9f-940715ea7abf)
+### 404 Page for Phone and Tablet
+![404 Page Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/52433964-646f-4f94-815c-9dd2aaf4328c)
