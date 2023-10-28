@@ -66,22 +66,25 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 - **Purpose**: The very bottom of the page provides branding for the platform and offers essential legal information.
 
 ### Design for FullHD Screen (Laptop, Computer, etc.)
-![fullhd](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7b66f191-6788-4267-9874-1fa3a6b49e66)
+![FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/e0ea8e6c-7124-4872-9513-79c0aa597685)
 
-### Design for Phone and Tablet
-![tablet](https://github.com/aBacoding/CryptoKazakh/assets/97093590/e9360d12-2b09-4eac-a4b0-3c3eb3485381)
+### Design for Tablet
+![Tablet](https://github.com/aBacoding/CryptoKazakh/assets/97093590/c8e0413e-5d5d-47a1-b861-cbf43a2e4bf6)
+
+### Design for Phone
+![Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/34991253-dd59-4977-8a05-7cf7d9c56c64)
 
 ### Hamburger menu
-![hamburger](https://github.com/aBacoding/CryptoKazakh/assets/97093590/67581647-3d1a-47ea-99d2-c5fddc185ab3)
+![Hamburger Menu](https://github.com/aBacoding/CryptoKazakh/assets/97093590/437029d4-db40-461f-a76b-28a42e31ec3f)
 
 ### Create NFT
-![CreateNft](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c340a5b-d4a4-47d6-8758-fb07a47f886d)
+![CreateNFT](https://github.com/aBacoding/CryptoKazakh/assets/97093590/2751a6e7-8f36-405a-a11f-8a4a1f8f8154)
 
 ### Details
-![Details](https://github.com/aBacoding/CryptoKazakh/assets/97093590/6d3956ea-5d67-4c80-bbcc-385929bee364)
+![DetailPage](https://github.com/aBacoding/CryptoKazakh/assets/97093590/818ad0ad-3348-44b7-8e10-5a944fb14e38)
 
-### 404 Page for Laptop
-![404 Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/56f2c8ac-e2fd-47c2-9242-3a0cd15b7412)
+### 404 Page for FullHD Screen (Laptop, Computer, etc.)
+![404 Page](https://github.com/aBacoding/CryptoKazakh/assets/97093590/b496bbb6-c0b5-4ff2-88d3-6e1165280444)
 
 ### 404 Page for Phone and Tablet
-![404 Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/d67b55c3-4a71-44c6-bf9f-940715ea7abf)
+![404 Page Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/52433964-646f-4f94-815c-9dd2aaf4328c)
