@@ -83,5 +83,5 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ### 404 Page for Laptop
 ![404 Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/56f2c8ac-e2fd-47c2-9242-3a0cd15b7412)
 
-### 404 Page for Phone
+### 404 Page for Phone and Tablet
 ![404 Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/d67b55c3-4a71-44c6-bf9f-940715ea7abf)
