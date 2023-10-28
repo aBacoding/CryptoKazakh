@@ -65,11 +65,17 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ### Footer Logo and Copyright Text
 - **Purpose**: The very bottom of the page provides branding for the platform and offers essential legal information.
 
-### Design for Laptop
-![Laptop](https://github.com/aBacoding/CryptoKazakh/assets/97093590/f7915afd-fa90-44bc-be95-464e12ac1728)
+### Design for FullHD Screen (Laptop, Computer, etc.)
+![fullhd](https://github.com/aBacoding/CryptoKazakh/assets/97093590/134fd87f-6d6c-4245-ade4-bfc77c13bc8f)
 
 ### Design for Phone
-![Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/236bf35d-a1fc-45a8-9c1d-aabe37ced7f3)
+![phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c564874-cb18-4db6-b546-6ce75d2eab51)
+
+### Design for Tablet
+![tablet](https://github.com/aBacoding/CryptoKazakh/assets/97093590/e9360d12-2b09-4eac-a4b0-3c3eb3485381)
+
+### Hamburger menu
+![hamburger](https://github.com/aBacoding/CryptoKazakh/assets/97093590/67581647-3d1a-47ea-99d2-c5fddc185ab3)
 
 ### Create NFT
 ![CreateNft](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c340a5b-d4a4-47d6-8758-fb07a47f886d)
