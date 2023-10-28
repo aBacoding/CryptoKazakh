@@ -69,7 +69,7 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ![fullhd](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7b66f191-6788-4267-9874-1fa3a6b49e66)
 
 ### Design for Phone and Tablet
-![phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/7c564874-cb18-4db6-b546-6ce75d2eab51)
+![tablet](https://github.com/aBacoding/CryptoKazakh/assets/97093590/e9360d12-2b09-4eac-a4b0-3c3eb3485381)
 
 ### Hamburger menu
 ![hamburger](https://github.com/aBacoding/CryptoKazakh/assets/97093590/67581647-3d1a-47ea-99d2-c5fddc185ab3)
