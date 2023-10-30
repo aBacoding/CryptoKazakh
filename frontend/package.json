@@ -16,6 +16,10 @@
     "@types/react-dom": "^18.2.13",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.29",
+    "ethereum-blockies": "^0.1.1",
+    "ethers": "^6.8.0",
+    "install": "^0.13.0",
+    "npm": "^10.2.1",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
@@ -24,7 +28,8 @@
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.0",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "web3": "^4.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -51,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@types/ethereum-blockies": "^0.1.1",
     "@types/react-burger-menu": "^2.8.5"
   }
 }

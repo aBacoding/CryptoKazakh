@@ -76,7 +76,7 @@ const LiveAuctions: React.FC = () => {
 	useEffect(() => {
 		const slider = sliderRef.current
 		let sliderIndex = 0
-		const cardWidth = 500
+		const cardWidth = 420
 		const numCards = carouselData.length
 
 		const updateSliderPosition = () => {
