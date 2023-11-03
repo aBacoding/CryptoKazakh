@@ -9,7 +9,7 @@ const carouselData = [
 		authorImg: './assets/image/author.png',
 		author: 'aBa',
 		bid: 2.77,
-		endTime: new Date('2023-10-26T24:00:00Z'),
+		endTime: new Date('2023-11-04T24:00:00Z'),
 	},
 	{
 		title: 'Kazakh fields',
@@ -17,7 +17,7 @@ const carouselData = [
 		authorImg: './assets/image/author2.png',
 		author: 'ferrum',
 		bid: 0.44,
-		endTime: new Date('2023-10-27T14:00:00Z'),
+		endTime: new Date('2023-11-02T14:35:43Z'),
 	},
 	{
 		title: 'KZAnime',
@@ -25,7 +25,7 @@ const carouselData = [
 		authorImg: './assets/image/author3.png',
 		author: '7eyAzat',
 		bid: 0.19,
-		endTime: new Date('2023-10-26T18:00:00Z'),
+		endTime: new Date('2023-11-03T18:00:00Z'),
 	},
 	{
 		title: 'Steppes Elegy',
@@ -40,19 +40,21 @@ const carouselData = [
 const getTimeDifference = (end: Date) => {
 	const now = new Date()
 	const diff = end.getTime() - now.getTime()
-	if (diff <= 0) return '00:00:00'
+
+	if (diff <= 0) return { formatted: '00:00:00', expired: true }
 
 	const hours = Math.floor(diff / (1000 * 60 * 60))
 	const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
 	const seconds = Math.floor((diff % (1000 * 60)) / 1000)
 
-	return `${hours.toString().padStart(2, '0')}:${minutes
+	const formatted = `${hours.toString().padStart(2, '0')}:${minutes
 		.toString()
 		.padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+
+	return { formatted, expired: false }
 }
 
 const LiveAuctions: React.FC = () => {
-	// Initial countdown values for each card
 	const initialCountdowns = carouselData.map(card =>
 		getTimeDifference(card.endTime)
 	)
@@ -75,8 +77,11 @@ const LiveAuctions: React.FC = () => {
 
 	useEffect(() => {
 		const slider = sliderRef.current
+		const leftButton = leftButtonRef.current
+		const rightButton = rightButtonRef.current
+
 		let sliderIndex = 0
-		const cardWidth = 420
+		const cardWidth = 510
 		const numCards = carouselData.length
 
 		const updateSliderPosition = () => {
@@ -94,9 +99,6 @@ const LiveAuctions: React.FC = () => {
 			sliderIndex = (sliderIndex + 1) % numCards
 			updateSliderPosition()
 		}
-
-		const leftButton = leftButtonRef.current
-		const rightButton = rightButtonRef.current
 
 		if (leftButton) {
 			leftButton.addEventListener('click', leftHandleClick)
@@ -149,7 +151,7 @@ const LiveAuctions: React.FC = () => {
 							<div className='card_description'>
 								<div className='card_description_inner'>
 									<div className='inner_content'>
-										<img src={card.authorImg} alt='author' /> {}
+										<img src={card.authorImg} alt='author' />
 										<div className='author_description'>
 											<h3 className='author_title'>{card.title}</h3>
 											<p className='paragraph'>by @{card.author}</p>
@@ -160,19 +162,21 @@ const LiveAuctions: React.FC = () => {
 									<p className='paragraph'>Current Bid</p>
 									<h4 className='crypto_price'>{card.bid} ETH</h4>
 								</div>
-								<a className='header_btn crypto_btn' href='#'>
-									Place a bid
+								<a
+									className={`header_btn crypto_btn ${
+										countdowns[index].expired ? 'expired' : ''
+									}`}
+									href={countdowns[index].expired ? 'javascript:void(0)' : '#'}
+								>
+									{countdowns[index].expired ? 'Expired' : 'Place a bid'}
 								</a>
 							</div>
 							<div className='timer_content'>
-								<h3 className='author_title'>{countdowns[index]}</h3>
+								<h3 className='author_title'>{countdowns[index].formatted}</h3>
 							</div>
 						</div>
 					))}
 				</div>
-				<a className='header_btn content_btn' href='#'>
-					View All
-				</a>
 			</div>
 		</section>
 	)

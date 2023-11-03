@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
 			<div className='container'>
 				<div className='footer_section'>
 					<div className='footer_logo_content'>
-						<a href='#'>
+						<a href='/'>
 							<img
 								src='./assets/image/footerLogo.png'
 								alt='logo'
@@ -26,10 +26,10 @@ const Footer: React.FC = () => {
 								leading the way in redefining the digital art landscape.
 							</p>
 							<div className='social_links'>
-								<a href='#' className='social_icons telegram'>
+								<a className='social_icons telegram'>
 									<i className='bx bxl-telegram icon'></i>
 								</a>
-								<a href='#' className='social_icons gmail'>
+								<a className='social_icons gmail'>
 									<i className='bx bxl-gmail icon'></i>
 								</a>
 							</div>

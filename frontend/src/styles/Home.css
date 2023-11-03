@@ -129,6 +129,14 @@
 	z-index: -1;
 }
 
+.header_btn.expired {
+	background: #b0b0b0;
+	color: rgb(255, 255, 255);
+	border: none;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
 .link_imgs {
 	display: flex;
 	flex-wrap: wrap;

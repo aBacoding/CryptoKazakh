@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-// Fixed end-time for the auction (for example, October 30, 2023, 18:00:00 GMT)
-const END_TIME = new Date('2023-10-26T21:00:00Z')
+interface BidContentProps {
+	setBidExpired: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const END_TIME = new Date('2023-11-01T01:00:00Z')
 const price = 0.85
 
 const getTimeDifference = (end: Date) => {
@@ -18,12 +21,17 @@ const getTimeDifference = (end: Date) => {
 		.padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 }
 
-const BidContent: React.FC = () => {
+const BidContent: React.FC<BidContentProps> = ({ setBidExpired }) => {
 	const [countdown, setCountdown] = useState(getTimeDifference(END_TIME))
 
 	useEffect(() => {
 		const intervalId = setInterval(() => {
-			setCountdown(getTimeDifference(END_TIME))
+			const time = getTimeDifference(END_TIME)
+			setCountdown(time)
+			if (time === '00:00:00') {
+				setBidExpired(true)
+				clearInterval(intervalId) // Clear the interval when bid expires
+			}
 		}, 1000)
 
 		return () => clearInterval(intervalId)

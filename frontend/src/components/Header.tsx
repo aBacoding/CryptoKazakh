@@ -2,9 +2,28 @@ import blockies from 'ethereum-blockies'
 import React, { useEffect, useState } from 'react'
 import '../styles/Header.css'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+	homeRef: React.RefObject<HTMLDivElement>
+	userAddress: string | null
+	setUserAddress: React.Dispatch<React.SetStateAction<string | null>>
+}
+
+const Header: React.FC<HeaderProps> = ({
+	homeRef,
+	userAddress,
+	setUserAddress,
+}) => {
+	const handleMyNFTsClick = (
+		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+	) => {
+		if (!userAddress) {
+			e.preventDefault()
+			// Assuming you want to alert the user first
+			alert('Please connect your wallet to access MyNFTs.')
+		}
+	}
+
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
-	const [userAddress, setUserAddress] = useState<string | null>(null)
 	const [avatar, setAvatar] = useState<string | null>(null)
 	const [uploadedAvatar, setUploadedAvatar] = useState<string | null>(null)
 
@@ -94,18 +113,27 @@ const Header: React.FC = () => {
 		localStorage.removeItem('isConnected')
 	}
 
+	const handleHomeClick = (
+		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+	) => {
+		e.preventDefault()
+		homeRef.current?.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	/* onClick={handleMyCreateClick} */
+
 	return (
 		<header className='header'>
 			<div className='container'>
 				<div className='header_section'>
-					<a href='#' className='logo'>
+					<a href='/' className='logo'>
 						<img src='./assets/image/logo.png' alt='logo' />
 					</a>
 					<div className='menu_section'>
 						<nav className='navigation'>
 							<ul>
 								<li>
-									<a className='nav_list' href='#'>
+									<a className='nav_list' href='#' onClick={handleHomeClick}>
 										Home
 									</a>
 								</li>
@@ -115,12 +143,7 @@ const Header: React.FC = () => {
 									</a>
 								</li>
 								<li>
-									<a className='nav_list' href='#'>
-										Create
-									</a>
-								</li>
-								<li>
-									<a className='nav_list' href='#'>
+									<a className='nav_list' href='#' onClick={handleMyNFTsClick}>
 										MyNFTs
 									</a>
 								</li>
@@ -188,29 +211,63 @@ const Header: React.FC = () => {
 							</span>
 							<ul>
 								<li>
+									<a className='nav_list' href='#' onClick={handleHomeClick}>
+										Home
+									</a>
+								</li>
+								<li>
 									<a className='nav_list' href='#'>
 										Explore
 									</a>
 								</li>
 								<li>
-									<a className='nav_list' href='#'>
-										Collections
-									</a>
-								</li>
-								<li>
-									<a className='nav_list' href='#'>
-										Creators
-									</a>
-								</li>
-								<li>
-									<a className='nav_list' href='#'>
+									<a className='nav_list' href='#' onClick={handleMyNFTsClick}>
 										MyNFTs
 									</a>
 								</li>
 							</ul>
-							<a className='header_btn' onClick={connectWallet}>
-								{userAddress ? 'Connected' : 'Connect Wallet'}
-							</a>
+							<div>
+								{avatarToDisplay && (
+									<>
+										<img
+											src={avatarToDisplay}
+											alt='User Avatar'
+											style={{
+												width: '40px',
+												height: '40px',
+												borderRadius: '50%',
+												marginRight: '20px',
+												cursor: 'pointer',
+											}}
+											onClick={() =>
+												document.getElementById('avatarInput')?.click()
+											}
+										/>
+										<input
+											type='file'
+											id='avatarInput'
+											style={{ display: 'none' }}
+											accept='image/*'
+											onChange={handleAvatarChange}
+										/>
+									</>
+								)}
+								<a
+									className='header_btn'
+									onClick={userAddress ? disconnectWallet : connectWallet}
+								>
+									{userAddress ? (
+										<>
+											Connected{' '}
+											<span style={{ fontSize: '0.8em', fontWeight: 'bold' }}>
+												{userAddress.substring(0, 6)}...{userAddress.slice(-4)}
+											</span>
+										</>
+									) : (
+										'Connect Wallet'
+									)}
+								</a>
+							</div>
 						</nav>
 					</div>
 				</div>

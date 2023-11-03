@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Carousel.css'
 import '../styles/Home.css'
 
@@ -8,7 +8,12 @@ import BidContent from './BidContent'
 import Links from './Links'
 import Rates from './Rates'
 
-const Home: React.FC = () => {
+interface HomeProps {
+	userAddress: string | null
+}
+
+const Home: React.FC<HomeProps> = ({ userAddress }) => {
+	const [isBidExpired, setBidExpired] = useState(false)
 	return (
 		<section className='home_section'>
 			<div className='container'>
@@ -21,7 +26,16 @@ const Home: React.FC = () => {
 							<a className='header_btn content_btn' href='#'>
 								Explore
 							</a>
-							<a className='header_btn content_btn' href='#'>
+							<a
+								className='header_btn content_btn'
+								href='#'
+								onClick={e => {
+									if (!userAddress) {
+										e.preventDefault()
+										alert('Please connect your wallet to create an NFT.')
+									}
+								}}
+							>
 								Create
 							</a>
 						</div>
@@ -35,8 +49,8 @@ const Home: React.FC = () => {
 						/>
 						<div className='home_section_img'>
 							<img src='./assets/image/mainsectionimg.png' alt='img' />
-							<BidContent />
-							<ArtistContent />
+							<BidContent setBidExpired={setBidExpired} />
+							<ArtistContent isBidExpired={isBidExpired} />
 							<img
 								className='scrolldown_button'
 								src='./assets/image/Scrolldownbutton.png'
