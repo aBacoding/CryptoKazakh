@@ -11,14 +11,13 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.58",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.29",
     "emailjs-com": "^3.2.0",
     "ethereum-blockies": "^0.1.1",
-    "ethers": "^6.8.0",
+    "ethers": "^5.7.2",
     "install": "^0.13.0",
     "npm": "^10.2.1",
     "react": "^18.2.0",
@@ -58,6 +57,7 @@
   },
   "devDependencies": {
     "@types/ethereum-blockies": "^0.1.1",
+    "@types/node": "^20.8.10",
     "@types/react-burger-menu": "^2.8.5"
   }
 }

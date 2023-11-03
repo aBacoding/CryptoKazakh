@@ -4,7 +4,7 @@ interface BidContentProps {
 	setBidExpired: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const END_TIME = new Date('2023-11-01T01:00:00Z')
+const END_TIME = new Date('2023-11-05T01:00:00Z')
 const price = 0.85
 
 const getTimeDifference = (end: Date) => {
