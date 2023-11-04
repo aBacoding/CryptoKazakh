@@ -18,7 +18,7 @@ const ArtistContent: React.FC<ArtistContentProps> = ({ isBidExpired }) => {
 				href='#'
 				onClick={e => isBidExpired && e.preventDefault()}
 			>
-				{isBidExpired ? 'Expired' : 'Start Bid'}
+				{isBidExpired ? 'Expired' : 'Purchase'}
 			</a>
 		</div>
 	)

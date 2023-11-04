@@ -109,11 +109,15 @@
 .artist_content .content_btn {
 	background: #ffcd4e99;
 	color: #1c121fb3;
+	cursor: not-allowed;
+	pointer-events: none;
 }
 
 .artist_content .content_btn:hover {
 	background: #ffce4e;
 	color: black;
+	cursor: not-allowed;
+	pointer-events: none;
 }
 
 .img_content {
