@@ -15,6 +15,7 @@
     "@types/react-dom": "^18.2.13",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.29",
+    "axios": "^1.6.0",
     "emailjs-com": "^3.2.0",
     "ethereum-blockies": "^0.1.1",
     "ethers": "^5.7.2",
