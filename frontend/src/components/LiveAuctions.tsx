@@ -6,7 +6,6 @@ const carouselData = [
 	{
 		title: 'Kazakh Warrior',
 		imgSrc: './assets/image/card1.png',
-		authorImg: './assets/image/author.png',
 		author: 'aBa',
 		bid: 2.77,
 		endTime: new Date('2023-11-04T24:00:00Z'),
@@ -14,7 +13,6 @@ const carouselData = [
 	{
 		title: 'Kazakh fields',
 		imgSrc: './assets/image/card2.png',
-		authorImg: './assets/image/author2.png',
 		author: 'ferrum',
 		bid: 0.44,
 		endTime: new Date('2023-11-05T14:35:43Z'),
@@ -22,7 +20,6 @@ const carouselData = [
 	{
 		title: 'KZAnime',
 		imgSrc: './assets/image/card3.png',
-		authorImg: './assets/image/author3.png',
 		author: '7eyAzat',
 		bid: 0.19,
 		endTime: new Date('2023-11-03T18:00:00Z'),
@@ -30,7 +27,6 @@ const carouselData = [
 	{
 		title: 'Steppes Elegy',
 		imgSrc: './assets/image/card4.png',
-		authorImg: './assets/image/author4.png',
 		author: 'TnnL',
 		bid: 1.99,
 		endTime: new Date('2023-10-27T18:00:00Z'),
@@ -151,7 +147,6 @@ const LiveAuctions: React.FC = () => {
 							<div className='card_description'>
 								<div className='card_description_inner'>
 									<div className='inner_content'>
-										<img src={card.authorImg} alt='author' />
 										<div className='author_description'>
 											<h3 className='author_title'>{card.title}</h3>
 											<p className='paragraph'>by @{card.author}</p>

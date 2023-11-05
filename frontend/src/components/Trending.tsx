@@ -4,7 +4,6 @@ import '../styles/Trending.css'
 
 interface CarouselCardProps {
 	imageUrl: string
-	authorImageUrl: string
 	title: string
 	author: string
 	price: number
@@ -83,7 +82,6 @@ const Trending: React.FC = () => {
 							<div className='card_description'>
 								<div className='card_description_inner'>
 									<div className='inner_content'>
-										<img src={card.authorImageUrl} alt='author' />
 										<div className='author_description'>
 											<h3 className='author_title'>{card.title}</h3>
 											<p className='paragraph'>by @{card.author}</p>
@@ -112,35 +110,30 @@ const Trending: React.FC = () => {
 const cards: CarouselCardProps[] = [
 	{
 		imageUrl: './assets/image/trending.png',
-		authorImageUrl: './assets/image/author.png',
 		title: 'Kazakh Essence',
 		author: 'aBa',
 		price: 0.14,
 	},
 	{
 		imageUrl: './assets/image/trending2.png',
-		authorImageUrl: './assets/image/author3.png',
 		title: 'Steppe Tales',
 		author: '7eyAzat',
 		price: 0.77,
 	},
 	{
 		imageUrl: './assets/image/trending3.png',
-		authorImageUrl: './assets/image/author.png',
 		title: 'Brave Warrior',
 		author: 'aBa',
 		price: 1.16,
 	},
 	{
 		imageUrl: './assets/image/trending4.png',
-		authorImageUrl: './assets/image/author2.png',
 		title: 'Neverland Legend',
 		author: 'ferrum',
 		price: 0.03,
 	},
 	{
 		imageUrl: './assets/image/trending5.png',
-		authorImageUrl: './assets/image/author4.png',
 		title: 'Kazakh Detective',
 		author: 'TnnL',
 		price: 0.01,

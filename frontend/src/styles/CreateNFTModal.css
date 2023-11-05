@@ -1,0 +1,123 @@
+/* CreateNFTModal.css */
+
+.create-nft-modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.create-nft-modal .modal-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.create-nft-modal .modal-content {
+	background: white;
+	padding: 40px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 11;
+	width: 600px;
+	max-width: 90%;
+}
+
+.create-nft-modal .close-modal {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border: none;
+	background: none;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.create-nft-modal h2 {
+	font-family: 'Oxanium', sans-serif;
+	text-align: center;
+	color: #000000;
+	font-size: 40px;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+.create-nft-modal .user-avatar {
+	display: block;
+	margin: 0 auto 20px;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}
+
+.create-nft-modal form {
+	display: flex;
+	flex-direction: column;
+}
+
+.create-nft-modal .form-group {
+	margin-bottom: 20px;
+}
+
+.create-nft-modal .form-group label {
+	display: block;
+	margin-bottom: 8px;
+	color: #594d5e;
+	font-family: 'Work Sans', sans-serif;
+}
+
+.create-nft-modal .form-group input[type='text'],
+.create-nft-modal .form-group input[type='file'] {
+	width: 100%;
+	padding: 12px 20px;
+	border-radius: 4px;
+	border: 1px solid #dce1e7;
+	font-family: 'Work Sans', sans-serif;
+}
+
+.create-nft-modal .form-group input[type='text'][readonly] {
+	background-color: #f3f3f3;
+	color: #bdbdbd;
+	cursor: not-allowed;
+}
+
+.create-nft-modal .form-actions {
+	text-align: center;
+}
+
+.create-nft-modal .submit-btn {
+	padding: 12px 76px;
+	color: white;
+	background-color: #ffcd4e;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: 'Oxanium', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	transition: background-color 0.3s;
+}
+
+.create-nft-modal .submit-btn:hover {
+	background-color: #e6b84e;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+	.create-nft-modal .modal-content {
+		padding: 20px;
+		width: 90%;
+	}
+
+	.create-nft-modal .submit-btn {
+		padding: 10px 20px;
+	}
+}
