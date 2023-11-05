@@ -4,7 +4,6 @@ import '../styles/LiveAuctions.css'
 
 const carouselData = [
 	{
-		id: 0,
 		title: 'Kazakh Warrior',
 		imgSrc: './assets/image/card1.png',
 		authorImg: './assets/image/author.png',
@@ -13,7 +12,6 @@ const carouselData = [
 		endTime: new Date('2023-11-04T24:00:00Z'),
 	},
 	{
-		id: 1,
 		title: 'Kazakh fields',
 		imgSrc: './assets/image/card2.png',
 		authorImg: './assets/image/author2.png',
@@ -22,7 +20,6 @@ const carouselData = [
 		endTime: new Date('2023-11-05T14:35:43Z'),
 	},
 	{
-		id: 2,
 		title: 'KZAnime',
 		imgSrc: './assets/image/card3.png',
 		authorImg: './assets/image/author3.png',
@@ -31,7 +28,6 @@ const carouselData = [
 		endTime: new Date('2023-11-03T18:00:00Z'),
 	},
 	{
-		id: 3,
 		title: 'Steppes Elegy',
 		imgSrc: './assets/image/card4.png',
 		authorImg: './assets/image/author4.png',

@@ -5,7 +5,15 @@ import { HardhatUserConfig } from 'hardhat/config'
 dotenv.config()
 
 const config: HardhatUserConfig = {
-	solidity: '0.8.0',
+	solidity: {
+		version: '0.8.4',
+		settings: {
+			optimizer: {
+				enabled: true,
+				runs: 200,
+			},
+		},
+	},
 	networks: {
 		sepolia: {
 			url: process.env.INFURA_URI,

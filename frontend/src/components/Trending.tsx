@@ -3,7 +3,6 @@ import '../styles/Carousel.css'
 import '../styles/Trending.css'
 
 interface CarouselCardProps {
-	id: number
 	imageUrl: string
 	authorImageUrl: string
 	title: string
@@ -112,7 +111,6 @@ const Trending: React.FC = () => {
 
 const cards: CarouselCardProps[] = [
 	{
-		id: 0,
 		imageUrl: './assets/image/trending.png',
 		authorImageUrl: './assets/image/author.png',
 		title: 'Kazakh Essence',
@@ -120,7 +118,6 @@ const cards: CarouselCardProps[] = [
 		price: 0.14,
 	},
 	{
-		id: 1,
 		imageUrl: './assets/image/trending2.png',
 		authorImageUrl: './assets/image/author3.png',
 		title: 'Steppe Tales',
@@ -128,7 +125,6 @@ const cards: CarouselCardProps[] = [
 		price: 0.77,
 	},
 	{
-		id: 2,
 		imageUrl: './assets/image/trending3.png',
 		authorImageUrl: './assets/image/author.png',
 		title: 'Brave Warrior',
@@ -136,7 +132,6 @@ const cards: CarouselCardProps[] = [
 		price: 1.16,
 	},
 	{
-		id: 3,
 		imageUrl: './assets/image/trending4.png',
 		authorImageUrl: './assets/image/author2.png',
 		title: 'Neverland Legend',
@@ -144,7 +139,6 @@ const cards: CarouselCardProps[] = [
 		price: 0.03,
 	},
 	{
-		id: 4,
 		imageUrl: './assets/image/trending5.png',
 		authorImageUrl: './assets/image/author4.png',
 		title: 'Kazakh Detective',
