@@ -88,3 +88,60 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 
 ### 404 Page for Phone and Tablet
 ![404 Page Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/52433964-646f-4f94-815c-9dd2aaf4328c)
+
+### Features to Implement
+
+1. **Reentrancy Guard**: Protect sensitive functions like `purchaseArtwork` using OpenZeppelin's `ReentrancyGuard` to prevent reentrancy attacks.
+
+2. **Withdraw Function**: Implement a `withdraw` function to allow safe withdrawal of funds, providing better security and owner control.
+
+3. **Events**: Emit events for all state changes such as successful purchases and listing fee updates to ensure transparency and traceability.
+
+4. **Access Control**: Utilize OpenZeppelin's `Ownable` contract to secure owner-only functions.
+
+5. **Error Messages**: Include descriptive error messages in all `require` statements for better debugging and user experience.
+
+6. **Function Modifiers**: Implement function modifiers for recurring requirements to simplify the code and enhance readability.
+
+## Function Demonstration
+
+To demonstrate the functions and handle incorrect inputs, testing frameworks like Hardhat or Truffle should be used. Here's how the contract should behave with incorrect inputs:
+
+- `updateListingFee`: Should revert if called by anyone other than the owner.
+- `mintArtwork`: Should revert if the sent value is less than the listing fee or if the price is set to zero.
+- `purchaseArtwork`: Should revert if the sent value does not match the artwork's price or if the artwork is not listed.
+
+## Parameter Validation
+
+The contract should validate inputs using:
+
+- Modifiers for common checks.
+- `assert` for invariants that should always be true.
+- Additional checks for edge cases, such as token ID validity or price ranges.
+
+## Financial Analysis
+
+### Cost Incurred by Clients
+
+- **Minting Artwork**: Clients pay the gas fee and the listing fee.
+- **Purchasing Artwork**: Clients pay the artwork price and the gas fee.
+
+### Potential Earnings or Losses for the Owner
+
+- **Listing Fee**: Earned each time artwork is minted.
+- **Purchase Artwork**: No direct earnings unless a sale fee is implemented.
+- **Update Listing Fee**: Indirect impact on earnings by affecting the attractiveness of the listing.
+
+### Potential Losses
+
+- Loss of potential earnings if the contract fails to attract users.
+- Loss of control or funds if there are bugs or security flaws.
+
+## Gas Optimization
+
+- Monitor and optimize contract functions for gas usage.
+- Use `view` and `pure` functions to reduce gas costs for read-only external calls.
+
+## Deployment and Testing
+
+Deploy the contract to a test network and interact with it using a wallet with test ether. Document the gas used for each function and calculate costs based on current gas prices.
