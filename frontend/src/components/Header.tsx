@@ -1,18 +1,15 @@
 import blockies from 'ethereum-blockies'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../App.css'
 import '../styles/Header.css'
 
 interface HeaderProps {
-	homeRef: React.RefObject<HTMLDivElement>
 	userAddress: string | null
 	setUserAddress: React.Dispatch<React.SetStateAction<string | null>>
 }
 
-const Header: React.FC<HeaderProps> = ({
-	homeRef,
-	userAddress,
-	setUserAddress,
-}) => {
+const Header: React.FC<HeaderProps> = ({ userAddress, setUserAddress }) => {
 	const handleMyNFTsClick = (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
@@ -113,15 +110,6 @@ const Header: React.FC<HeaderProps> = ({
 		localStorage.removeItem('isConnected')
 	}
 
-	const handleHomeClick = (
-		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		e.preventDefault()
-		homeRef.current?.scrollIntoView({ behavior: 'smooth' })
-	}
-
-	/* onClick={handleMyCreateClick} */
-
 	return (
 		<header className='header'>
 			<div className='container'>
@@ -133,14 +121,14 @@ const Header: React.FC<HeaderProps> = ({
 						<nav className='navigation'>
 							<ul>
 								<li>
-									<a className='nav_list' href='#' onClick={handleHomeClick}>
+									<Link to='/' className='nav_list'>
 										Home
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a className='nav_list' href='#'>
+									<Link className='nav_list' to='/explore'>
 										Explore
-									</a>
+									</Link>
 								</li>
 								<li>
 									<a className='nav_list' href='#' onClick={handleMyNFTsClick}>
@@ -211,14 +199,14 @@ const Header: React.FC<HeaderProps> = ({
 							</span>
 							<ul>
 								<li>
-									<a className='nav_list' href='#' onClick={handleHomeClick}>
+									<Link to='/' className='nav_list'>
 										Home
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a className='nav_list' href='#'>
+									<Link className='nav_list' to='/explore'>
 										Explore
-									</a>
+									</Link>
 								</li>
 								<li>
 									<a className='nav_list' href='#' onClick={handleMyNFTsClick}>

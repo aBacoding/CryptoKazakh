@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../App.css'
 import '../styles/Carousel.css'
 import '../styles/Home.css'
 import CreateNFTModal from './CreateNFTModal'
@@ -36,9 +38,9 @@ const Home: React.FC<HomeProps> = ({ userAddress }) => {
 								Create, Buy and Sell the <span>Kazakh NFTs!</span>
 							</h1>
 							<div className='btn_section'>
-								<a className='header_btn content_btn' href='#'>
+								<Link className='header_btn content_btn' to='/explore'>
 									Explore
-								</a>
+								</Link>
 								<a
 									className='header_btn content_btn'
 									href='#'
@@ -57,7 +59,7 @@ const Home: React.FC<HomeProps> = ({ userAddress }) => {
 							/>
 							<div className='home_section_img'>
 								<img src='./assets/image/mainsectionimg.png' alt='img' />
-								<BidContent setBidExpired={setBidExpired} />
+								<BidContent />
 								<ArtistContent isBidExpired={isBidExpired} />
 								<img
 									className='scrolldown_button'

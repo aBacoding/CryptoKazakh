@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 import '../styles/TopCreators.css'
 
 interface TopCreatorProps {
@@ -38,6 +39,11 @@ const TopCreators: React.FC = () => {
 
 	return (
 		<section className='home_section_6'>
+			<img
+				className='blur_image'
+				src='./assets/image/blursection5.png'
+				alt='blur'
+			/>
 			<div className='container'>
 				<div className='title_content'>
 					<img
@@ -45,7 +51,7 @@ const TopCreators: React.FC = () => {
 						src='./assets/image/red.png'
 						alt='violet'
 					/>
-					<h2 className='title'>Top Creators</h2>
+					<h2 className='title'>Latest Transactions</h2>
 				</div>
 				<div className='grid_descriptions'>
 					{creators.map((creator, index) => (

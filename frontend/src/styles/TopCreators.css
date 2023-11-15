@@ -5,8 +5,18 @@
 	margin-bottom: 100px;
 }
 
+.home_section_6 .blur_image {
+	position: absolute;
+	left: -250px;
+	top: 1800px;
+	z-index: -1;
+}
+
 .home_section_6 .title_img {
-	left: 450px;
+	position: absolute;
+	z-index: -1;
+	left: 363px;
+	top: 8px;
 }
 
 .home_section_6 .title_content {

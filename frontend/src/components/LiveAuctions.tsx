@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import '../App.css'
 import '../styles/Carousel.css'
 import '../styles/LiveAuctions.css'
 
@@ -8,28 +9,28 @@ const carouselData = [
 		imgSrc: './assets/image/card1.png',
 		author: 'aBa',
 		bid: 2.77,
-		endTime: new Date('2023-11-04T24:00:00Z'),
+		endTime: new Date('2023-11-06T24:00:00Z'),
 	},
 	{
 		title: 'Kazakh fields',
 		imgSrc: './assets/image/card2.png',
 		author: 'ferrum',
 		bid: 0.44,
-		endTime: new Date('2023-11-05T14:35:43Z'),
+		endTime: new Date('2023-11-07T14:35:43Z'),
 	},
 	{
 		title: 'KZAnime',
 		imgSrc: './assets/image/card3.png',
 		author: '7eyAzat',
 		bid: 0.19,
-		endTime: new Date('2023-11-03T18:00:00Z'),
+		endTime: new Date('2023-11-04T18:00:00Z'),
 	},
 	{
 		title: 'Steppes Elegy',
 		imgSrc: './assets/image/card4.png',
 		author: 'TnnL',
 		bid: 1.99,
-		endTime: new Date('2023-10-27T18:00:00Z'),
+		endTime: new Date('2023-11-05T18:00:00Z'),
 	},
 ]
 

@@ -1,5 +1,6 @@
 // HowItWorks.tsx
 import React from 'react'
+import '../App.css'
 import '../styles/Carousel.css'
 import '../styles/HowItWorks.css'
 
@@ -39,7 +40,7 @@ const HowItWorks: React.FC = () => {
 					<WorkItem
 						imgSrc='./assets/image/collection.png'
 						altText='collection'
-						title='Create your collection'
+						title='Create your NFTs'
 					/>
 					<WorkItem
 						imgSrc='./assets/image/nfts.png'
