@@ -15,11 +15,12 @@ Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace d
 ## How to run the DApp?
 
 To set up the repository and run the marketplace locally, run the below
-
-git clone https://github.com/OMGWINNING/NFT-Marketplace-Tutorial
-cd NFT-Marketplace-Tutorial
+```bash
+git clone https://github.com/aBacoding/CryptoKazakh
+cd frontend
 npm install
 npm start
+```
 
 ## Interfaces
 
