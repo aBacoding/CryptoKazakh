@@ -3,7 +3,6 @@ Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace d
 
 ## Table of Contents
 
-- [Kazakh NFT Marketplace](#kazakh-nft-marketplace)
   - [Interfaces](#interfaces)
     - [Homepage](#homepage)
     - [Create New NFT](#create-new-nft)
