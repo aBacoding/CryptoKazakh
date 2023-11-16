@@ -1,45 +1,25 @@
 # CryptoKazakh NFT Marketplace
 Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace designed to foster global appreciation and preservation of Kazakh culture. This decentralized application (dApp) leverages blockchain technology to provide a platform for artists and cultural enthusiasts to create, buy and explore Kazakh-themed Non-Fungible Tokens (NFTs).
 
-## How to run the DApp
-
-In the project directory, you can run:
-
-### `cd frontend`
-
-In order to specify the exact folder where your React app is located
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
 ## Table of Contents
+- [How to run the DApp?](#how-to-run-the-dapp)
+- [Interfaces](#interfaces)
+  - [Homepage](#homepage)
+  - [Create New NFT](#create-new-nft)
+  - [Explore Page](#explore-page)
+  - [My NFTs](#my-nfts)
+  - [404 Error Page](#404-error-page)
+- [Developers](#developers)
+- [Contributing](#contributing)
 
-  - [Interfaces](#interfaces)
-    - [Homepage](#homepage)
-    - [Create New NFT](#create-new-nft)
-    - [Explore Page](#explore-page)
-    - [My NFTs](#my-nfts)
-    - [404 Error Page](#404-error-page)
-  - [Developers](#developers)
-  - [Contributing](#contributing)
+## How to run the DApp?
+
+To set up the repository and run the marketplace locally, run the below
+
+git clone https://github.com/OMGWINNING/NFT-Marketplace-Tutorial
+cd NFT-Marketplace-Tutorial
+npm install
+npm start
 
 ## Interfaces
 
