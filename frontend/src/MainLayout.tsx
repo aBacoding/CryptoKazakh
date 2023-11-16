@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './components/Home'
 import HowItWorks from './components/HowItWorks'
+import MyNFT from './components/MyNFT'
 import NFTDropSubscription from './components/NFTDropSubscription'
 import TopCreators from './components/TopCreators'
 import './styles/Carousel.css'
@@ -43,6 +44,7 @@ const MainLayout: React.FC = () => {
 						}
 					/>
 					<Route path='/explore' element={<Explore />} />
+					<Route path='/mynfts' element={<MyNFT />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</main>

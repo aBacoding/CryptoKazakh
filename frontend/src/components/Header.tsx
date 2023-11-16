@@ -131,9 +131,13 @@ const Header: React.FC<HeaderProps> = ({ userAddress, setUserAddress }) => {
 									</Link>
 								</li>
 								<li>
-									<a className='nav_list' href='#' onClick={handleMyNFTsClick}>
+									<Link
+										className='nav_list'
+										to='/mynfts'
+										onClick={handleMyNFTsClick}
+									>
 										MyNFTs
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</nav>
@@ -209,9 +213,13 @@ const Header: React.FC<HeaderProps> = ({ userAddress, setUserAddress }) => {
 									</Link>
 								</li>
 								<li>
-									<a className='nav_list' href='#' onClick={handleMyNFTsClick}>
+									<Link
+										className='nav_list'
+										to='/mynfts'
+										onClick={handleMyNFTsClick}
+									>
 										MyNFTs
-									</a>
+									</Link>
 								</li>
 							</ul>
 							<div>
