@@ -104,10 +104,19 @@ const Header: React.FC<HeaderProps> = ({ userAddress, setUserAddress }) => {
 	const avatarToDisplay = uploadedAvatar || avatar
 
 	const disconnectWallet = () => {
-		setUserAddress(null)
-		setAvatar(null)
-		setUploadedAvatar(null)
-		localStorage.removeItem('isConnected')
+		const userConfirmation = window.confirm(
+			'Do you want to disconnect from your wallet?'
+		)
+		if (userConfirmation) {
+			// If user confirms, proceed with disconnection
+			setUserAddress(null)
+			setAvatar(null)
+			setUploadedAvatar(null)
+			localStorage.removeItem('isConnected')
+
+			// Redirect to the home page
+			window.location.href = '/'
+		}
 	}
 
 	return (
