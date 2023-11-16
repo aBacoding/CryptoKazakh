@@ -1,4 +1,5 @@
 import axios from 'axios'
+import blockies from 'ethereum-blockies'
 import { ethers } from 'ethers'
 import FormData from 'form-data'
 import React, { useState } from 'react'
@@ -30,7 +31,6 @@ const CreateNFTModal: React.FC<CreateNFTModalProps> = ({
 				headers: {
 					pinata_api_key: pinataApiKey,
 					pinata_secret_api_key: pinataSecretApiKey,
-					// 'Content-Type': `multipart/form-data; boundary=${data.getBoundary()}`, // This line is not needed, axios and form-data handle it
 				},
 			})
 
@@ -82,328 +82,7 @@ const CreateNFTModal: React.FC<CreateNFTModalProps> = ({
 		const signer = provider.getSigner()
 
 		const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
-		const contractABI = [
-			{ type: 'constructor', payable: false, inputs: [] },
-			{
-				type: 'event',
-				anonymous: false,
-				name: 'Approval',
-				inputs: [
-					{ type: 'address', name: 'owner', indexed: true },
-					{ type: 'address', name: 'approved', indexed: true },
-					{ type: 'uint256', name: 'tokenId', indexed: true },
-				],
-			},
-			{
-				type: 'event',
-				anonymous: false,
-				name: 'ApprovalForAll',
-				inputs: [
-					{ type: 'address', name: 'owner', indexed: true },
-					{ type: 'address', name: 'operator', indexed: true },
-					{ type: 'bool', name: 'approved', indexed: false },
-				],
-			},
-			{
-				type: 'event',
-				anonymous: false,
-				name: 'ArtworkListed',
-				inputs: [
-					{ type: 'uint256', name: 'tokenId', indexed: true },
-					{ type: 'address', name: 'owner', indexed: false },
-					{ type: 'address', name: 'seller', indexed: false },
-					{ type: 'uint256', name: 'price', indexed: false },
-					{ type: 'bool', name: 'currentlyListed', indexed: false },
-				],
-			},
-			{
-				type: 'event',
-				anonymous: false,
-				name: 'BatchMetadataUpdate',
-				inputs: [
-					{ type: 'uint256', name: '_fromTokenId', indexed: false },
-					{ type: 'uint256', name: '_toTokenId', indexed: false },
-				],
-			},
-			{
-				type: 'event',
-				anonymous: false,
-				name: 'MetadataUpdate',
-				inputs: [{ type: 'uint256', name: '_tokenId', indexed: false }],
-			},
-			{
-				type: 'event',
-				anonymous: false,
-				name: 'Transfer',
-				inputs: [
-					{ type: 'address', name: 'from', indexed: true },
-					{ type: 'address', name: 'to', indexed: true },
-					{ type: 'uint256', name: 'tokenId', indexed: true },
-				],
-			},
-			{
-				type: 'function',
-				name: 'approve',
-				constant: false,
-				payable: false,
-				inputs: [
-					{ type: 'address', name: 'to' },
-					{ type: 'uint256', name: 'tokenId' },
-				],
-				outputs: [],
-			},
-			{
-				type: 'function',
-				name: 'balanceOf',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [{ type: 'address', name: 'owner' }],
-				outputs: [{ type: 'uint256' }],
-			},
-			{
-				type: 'function',
-				name: 'browseGallery',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [],
-				outputs: [
-					{
-						type: 'tuple[]',
-						components: [
-							{ type: 'uint256', name: 'tokenId' },
-							{ type: 'address', name: 'owner' },
-							{ type: 'address', name: 'seller' },
-							{ type: 'uint256', name: 'price' },
-							{ type: 'bool', name: 'currentlyListed' },
-						],
-					},
-				],
-			},
-			{
-				type: 'function',
-				name: 'getApproved',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [{ type: 'uint256', name: 'tokenId' }],
-				outputs: [{ type: 'address' }],
-			},
-			{
-				type: 'function',
-				name: 'getArtwork',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [{ type: 'uint256', name: 'tokenId' }],
-				outputs: [
-					{
-						type: 'tuple',
-						components: [
-							{ type: 'uint256', name: 'tokenId' },
-							{ type: 'address', name: 'owner' },
-							{ type: 'address', name: 'seller' },
-							{ type: 'uint256', name: 'price' },
-							{ type: 'bool', name: 'currentlyListed' },
-						],
-					},
-				],
-			},
-			{
-				type: 'function',
-				name: 'getCurrentToken',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [],
-				outputs: [{ type: 'uint256' }],
-			},
-			{
-				type: 'function',
-				name: 'getLatestArtwork',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [],
-				outputs: [
-					{
-						type: 'tuple',
-						components: [
-							{ type: 'uint256', name: 'tokenId' },
-							{ type: 'address', name: 'owner' },
-							{ type: 'address', name: 'seller' },
-							{ type: 'uint256', name: 'price' },
-							{ type: 'bool', name: 'currentlyListed' },
-						],
-					},
-				],
-			},
-			{
-				type: 'function',
-				name: 'getListingFee',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [],
-				outputs: [{ type: 'uint256' }],
-			},
-			{
-				type: 'function',
-				name: 'isApprovedForAll',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [
-					{ type: 'address', name: 'owner' },
-					{ type: 'address', name: 'operator' },
-				],
-				outputs: [{ type: 'bool' }],
-			},
-			{
-				type: 'function',
-				name: 'mintArtwork',
-				constant: false,
-				stateMutability: 'payable',
-				payable: true,
-				inputs: [
-					{ type: 'string', name: 'tokenURI' },
-					{ type: 'uint256', name: 'price' },
-				],
-				outputs: [{ type: 'uint256' }],
-			},
-			{
-				type: 'function',
-				name: 'myCollection',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [],
-				outputs: [
-					{
-						type: 'tuple[]',
-						components: [
-							{ type: 'uint256', name: 'tokenId' },
-							{ type: 'address', name: 'owner' },
-							{ type: 'address', name: 'seller' },
-							{ type: 'uint256', name: 'price' },
-							{ type: 'bool', name: 'currentlyListed' },
-						],
-					},
-				],
-			},
-			{
-				type: 'function',
-				name: 'name',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [],
-				outputs: [{ type: 'string' }],
-			},
-			{
-				type: 'function',
-				name: 'ownerOf',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [{ type: 'uint256', name: 'tokenId' }],
-				outputs: [{ type: 'address' }],
-			},
-			{
-				type: 'function',
-				name: 'purchaseArtwork',
-				constant: false,
-				stateMutability: 'payable',
-				payable: true,
-				inputs: [{ type: 'uint256', name: 'tokenId' }],
-				outputs: [],
-			},
-			{
-				type: 'function',
-				name: 'safeTransferFrom',
-				constant: false,
-				payable: false,
-				inputs: [
-					{ type: 'address', name: 'from' },
-					{ type: 'address', name: 'to' },
-					{ type: 'uint256', name: 'tokenId' },
-				],
-				outputs: [],
-			},
-			{
-				type: 'function',
-				name: 'safeTransferFrom',
-				constant: false,
-				payable: false,
-				inputs: [
-					{ type: 'address', name: 'from' },
-					{ type: 'address', name: 'to' },
-					{ type: 'uint256', name: 'tokenId' },
-					{ type: 'bytes', name: 'data' },
-				],
-				outputs: [],
-			},
-			{
-				type: 'function',
-				name: 'setApprovalForAll',
-				constant: false,
-				payable: false,
-				inputs: [
-					{ type: 'address', name: 'operator' },
-					{ type: 'bool', name: 'approved' },
-				],
-				outputs: [],
-			},
-			{
-				type: 'function',
-				name: 'supportsInterface',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [{ type: 'bytes4', name: 'interfaceId' }],
-				outputs: [{ type: 'bool' }],
-			},
-			{
-				type: 'function',
-				name: 'symbol',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [],
-				outputs: [{ type: 'string' }],
-			},
-			{
-				type: 'function',
-				name: 'tokenURI',
-				constant: true,
-				stateMutability: 'view',
-				payable: false,
-				inputs: [{ type: 'uint256', name: 'tokenId' }],
-				outputs: [{ type: 'string' }],
-			},
-			{
-				type: 'function',
-				name: 'transferFrom',
-				constant: false,
-				payable: false,
-				inputs: [
-					{ type: 'address', name: 'from' },
-					{ type: 'address', name: 'to' },
-					{ type: 'uint256', name: 'tokenId' },
-				],
-				outputs: [],
-			},
-			{
-				type: 'function',
-				name: 'updateListingFee',
-				constant: false,
-				stateMutability: 'payable',
-				payable: true,
-				inputs: [{ type: 'uint256', name: '_listingFee' }],
-				outputs: [],
-			},
-		]
+		const contractABI = require('../ArtCollectiveMarket.json').abi
 
 		// Create a new contract instance
 		const contract = new ethers.Contract(contractAddress, contractABI, signer)
@@ -411,9 +90,12 @@ const CreateNFTModal: React.FC<CreateNFTModalProps> = ({
 		// Convert price to Wei
 		const priceInWei = ethers.utils.parseEther(price)
 
+		// Convert listing fee to Wei
+		const listingFee = ethers.utils.parseEther('0.01') // Listing fee is 0.01 ether
+
 		// Send a transaction to mint the NFT
 		const transaction = await contract.mintArtwork(metadataUri, priceInWei, {
-			value: priceInWei, // This assumes your mintArtwork function also requires the msg.value to equal the price
+			value: listingFee, // Set the transaction value to the listing fee
 		})
 
 		await transaction.wait() // Wait for the transaction to be mined
@@ -429,12 +111,16 @@ const CreateNFTModal: React.FC<CreateNFTModalProps> = ({
 
 		try {
 			const imageIpfsHash = await pinFileToIPFS(imageFile)
+			const avatarUrl =
+				localStorage.getItem(`avatar_${userAddress}`) ||
+				blockies.create({ seed: userAddress }).toDataURL()
 
 			const metadata = {
 				title,
 				image: imageIpfsHash,
 				price,
-				userAddress, // Include the user address in the metadata
+				userAddress,
+				avatar: avatarUrl,
 			}
 
 			const metadataIpfsHash = await pinJSONToIPFS(metadata)

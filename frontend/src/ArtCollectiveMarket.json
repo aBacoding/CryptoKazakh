@@ -1,5 +1,4 @@
 {
-	"address": "0xBcF925D2EbB56AeD126097952AAE48E48E27475e",
 	"abi": [
 		{ "type": "constructor", "payable": false, "inputs": [] },
 		{
