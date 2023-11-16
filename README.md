@@ -66,9 +66,14 @@ Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace d
 ## Developers
 
 - Abdurakhim Bakytzhan
+  - main frontend developer
+  - main blockchain developer 
 - Temirlan Torebekov
+  - main blockchain developer 
 - Azat Bekturganov
+  - secondary blockchain developer
 - Nursultan Tynyshbay
+  - secondary frontend developer
 
 ## Contributing
 
