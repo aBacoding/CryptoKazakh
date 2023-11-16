@@ -7,6 +7,7 @@ import Header from './Header'
 const Explore: React.FC = () => {
 	const [userAddress, setUserAddress] = useState<string | null>(null)
 	const [nfts, setNfts] = useState<any[]>([])
+	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	const fetchNFTs = async () => {
 		if (window.ethereum) {
@@ -85,37 +86,43 @@ const Explore: React.FC = () => {
 			<section className='explore_section'>
 				<div className='container'>
 					<h2 className='explore_title'>Explore</h2>
-					<div className='nft-grid'>
-						{nfts.map((nft, index) => (
-							<div key={index} className='nft-card'>
-								<div className='image-container'>
-									<img
-										src={`https://ipfs.io/ipfs/${nft.image}`}
-										alt={nft.title}
-									/>
-								</div>
-								<div className='nft-info'>
-									<h3>{nft.title}</h3>
-									<div className='artist'>
-										<img src={nft.avatar} alt='Artist Avatar' />
-										<span className='wallet-address'>
-											by @{nft.seller.substring(0, 6)}...
-										</span>
+					{isLoading ? (
+						<p>Loading NFTs...</p>
+					) : nfts.length > 0 ? (
+						<div className='nft-grid'>
+							{nfts.map((nft, index) => (
+								<div key={index} className='nft-card'>
+									<div className='image-container'>
+										<img
+											src={`https://ipfs.io/ipfs/${nft.image}`}
+											alt={nft.title}
+										/>
 									</div>
-									<div className='bid-info'>
-										<div className='current-bid'>Current Bid</div>
-										<p className='price'>{nft.price} ETH</p>
+									<div className='nft-info'>
+										<h3>{nft.title}</h3>
+										<div className='artist'>
+											<img src={nft.avatar} alt='Artist Avatar' />
+											<span className='wallet-address'>
+												by @{nft.seller.substring(0, 6)}...
+											</span>
+										</div>
+										<div className='bid-info'>
+											<div className='current-bid'>Current Bid</div>
+											<p className='price'>{nft.price} ETH</p>
+										</div>
+										<button
+											className='place-bid'
+											onClick={() => purchaseArtwork(nft.tokenId, nft.price)}
+										>
+											Purchase
+										</button>
 									</div>
-									<button
-										className='place-bid'
-										onClick={() => purchaseArtwork(nft.tokenId, nft.price)}
-									>
-										Purchase
-									</button>
 								</div>
-							</div>
-						))}
-					</div>
+							))}
+						</div>
+					) : (
+						<p>No NFTs available.</p>
+					)}
 				</div>
 			</section>
 		</>

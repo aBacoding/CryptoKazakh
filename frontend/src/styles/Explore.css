@@ -125,6 +125,14 @@
 	max-width: 200px;
 }
 
+.explore_section p {
+	font-family: 'Work Sans', sans-serif; /* Consistent font for readability */
+	font-size: 1.5rem; /* Adequate size for information */
+	color: #f5fbf2; /* Light color for contrast against the dark background */
+	text-align: center; /* Center alignment for better visual appeal */
+	margin-bottom: 20px; /* Spacing below each paragraph */
+}
+
 /* Responsive design adjustments */
 @media (max-width: 1024px) {
 	/* Styles for tablets and smaller desktops */
@@ -140,6 +148,9 @@
 	/* Styles for landscape phones and smaller tablets */
 	.nft-grid {
 		grid-template-columns: 1fr; /* Single card per row */
+	}
+	.explore-section p {
+		font-size: 1rem; /* Slightly smaller font size on smaller screens */
 	}
 
 	.nft-info h3,
@@ -168,6 +179,10 @@
 
 	.nft-info h3 {
 		font-size: 1.2rem; /* Smaller font size for NFT titles */
+	}
+
+	.explore-section p {
+		font-size: 0.9rem; /* Slightly smaller font size on smaller screens */
 	}
 
 	.nft-info .artist .wallet-address,
