@@ -22,6 +22,14 @@ npm install
 npm start
 ```
 
+To set up and run the smartcontracts, run the below
+```bash
+git clone https://github.com/aBacoding/CryptoKazakh
+cd hardhat
+npx hardhat compile
+npx hardhat run --network sepolia scripts/deploy.ts
+```
+
 ## Interfaces
 
 ### Homepage
