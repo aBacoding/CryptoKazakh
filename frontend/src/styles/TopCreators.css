@@ -2,20 +2,20 @@
 
 .home_section_6 {
 	text-align: center;
-	margin-bottom: 100px;
+	padding: 60px 0;
 }
 
 .home_section_6 .blur_image {
 	position: absolute;
-	left: -250px;
-	top: 1800px;
+	left: -400px;
+	top: 2200px;
 	z-index: -1;
 }
 
 .home_section_6 .title_img {
 	position: absolute;
 	z-index: -1;
-	left: 363px;
+	left: 497px;
 	top: 8px;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .grid_card .author_title {
-	font-size: 32px;
+	font-size: 30px;
 	font-weight: 600;
 	line-height: 35.452px;
 	letter-spacing: 1.6px;

@@ -5,6 +5,14 @@
 	background: #1c121f; /* Dark theme background */
 }
 
+.explore_title {
+	font-family: 'Oxanium', cursive;
+	font-size: 4.5rem; /* Adjust the size as needed */
+	color: #f5fbf2; /* Set the color */
+	text-align: center; /* Center the title */
+	margin-bottom: 60px; /* Space below the title */
+}
+
 .nft-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -126,6 +134,9 @@
 }
 
 @media (max-width: 768px) {
+	.explore_title {
+		font-size: 3.5rem; /* Smaller font size for smaller devices */
+	}
 	/* Styles for landscape phones and smaller tablets */
 	.nft-grid {
 		grid-template-columns: 1fr; /* Single card per row */
@@ -147,6 +158,9 @@
 }
 
 @media (max-width: 480px) {
+	.explore_title {
+		font-size: 2.5rem; /* Even smaller font size for mobile phones */
+	}
 	/* Styles for portrait phones */
 	.nft-info {
 		padding: 15px; /* Slightly reduce padding */

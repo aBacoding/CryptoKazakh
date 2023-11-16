@@ -37,8 +37,8 @@ const MainLayout: React.FC = () => {
 									<Home userAddress={userAddress} />
 								</div>
 								<HowItWorks />
-								<TopCreators />
 								<NFTDropSubscription />
+								<TopCreators />
 							</>
 						}
 					/>

@@ -44,11 +44,17 @@ contract ArtCollectiveMarket is ERC721URIStorage {
 
     function browseGallery() public view returns (Artwork[] memory) {
         uint itemCount = _tokenIds.current();
-        Artwork[] memory items = new Artwork[](itemCount);
+        uint listedItemCount = _tokenIds.current() - _itemsSold.current();
+        Artwork[] memory items = new Artwork[](listedItemCount);
+        uint currentIndex = 0;
+
         for (uint i = 0; i < itemCount; i++) {
-            uint currentId = i + 1;
-            Artwork storage currentItem = idToArtwork[currentId];
-            items[i] = currentItem;
+            if (idToArtwork[i + 1].currentlyListed) {
+                uint currentId = i + 1;
+                Artwork storage currentItem = idToArtwork[currentId];
+                items[currentIndex] = currentItem;
+                currentIndex++;
+            }
         }
         return items;
     }
