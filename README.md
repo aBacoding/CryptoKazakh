@@ -66,7 +66,7 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 - **Purpose**: The very bottom of the page provides branding for the platform and offers essential legal information.
 
 ### Design FullHD
-![FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/e68a5c23-6b11-4f4a-898b-19705b3dbe30)
+![FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/278bb6e5-2cbd-4abd-b8f2-2ad8ba6b4f72)
 
 ### Design for Phone
 ![Mobile](https://github.com/aBacoding/CryptoKazakh/assets/97093590/b11c1b91-07f8-4a78-bc04-47ba767fa9f3)
@@ -75,7 +75,7 @@ Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, a
 ![Hamburger Menu](https://github.com/aBacoding/CryptoKazakh/assets/97093590/fca0672f-f922-433a-aeb8-0b20c34a98db)
 
 ### Create New NFT FullHD
-![Create New NFT FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/35c72922-ca2e-48ae-8bcb-0d7636c24a9d)
+![Create New NFT FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/cfbc5f39-2ec1-47ee-9ace-238ada7e4785)
 
 ### Create New NFT for Phone
 ![Create New NFT Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/fca3b956-9729-4d5c-9097-b734441361d1)
