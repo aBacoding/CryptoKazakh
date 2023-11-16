@@ -1,9 +1,5 @@
-# CryptoKazakh
+# CryptoKazakh NFT Marketplace
 Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace designed to foster global appreciation and preservation of Kazakh culture. This decentralized application (dApp) leverages blockchain technology to provide a platform for artists and cultural enthusiasts to create, buy and explore Kazakh-themed Non-Fungible Tokens (NFTs).
-
-## CryptoKazakh NFT Marketplace
-
-Welcome to our CryptoKazakh NFT Marketplace where users can create, buy, sell, and interact with a wide range of digital artworks and collections.
 
 ### Design FullHD
 ![FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/278bb6e5-2cbd-4abd-b8f2-2ad8ba6b4f72)
