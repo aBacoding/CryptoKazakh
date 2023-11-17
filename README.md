@@ -36,7 +36,7 @@ npx hardhat run --network sepolia scripts/deploy.ts
 
 ### Costs for Clients (Users)
 
-#### 1. Minting Artwork (`mintArtwork` Function)
+1. #### Minting Artwork (`mintArtwork` Function)
 
 - **Cost:** The cost for a client to mint a new artwork is the `listingFee`, set at `0.01 ether`. This fee is mandatory to list the artwork in the gallery. Additionally, users should consider the gas fees required for executing this function on the Ethereum network.
 
