@@ -10,6 +10,7 @@ const Explore: React.FC = () => {
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	const fetchNFTs = async () => {
+		setIsLoading(true)
 		if (window.ethereum) {
 			const provider = new ethers.providers.Web3Provider(window.ethereum)
 			const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
@@ -44,6 +45,7 @@ const Explore: React.FC = () => {
 		} else {
 			console.log('Ethereum object not found, install MetaMask.')
 		}
+		setIsLoading(false)
 	}
 
 	const purchaseArtwork = async (tokenId: string, price: string) => {
