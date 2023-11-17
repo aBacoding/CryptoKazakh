@@ -3,12 +3,14 @@ Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace d
 
 ## Table of Contents
 - [How to run the DApp?](#how-to-run-the-dapp)
+- [Financial Analysis](#financial-analysis)
 - [Interfaces](#interfaces)
   - [Homepage](#homepage)
   - [Create New NFT](#create-new-nft)
   - [Explore Page](#explore-page)
   - [My NFTs](#my-nfts)
   - [404 Error Page](#404-error-page)
+- [Designs](#designs)
 - [Developers](#developers)
 - [Contributing](#contributing)
 
@@ -29,6 +31,9 @@ cd hardhat
 npx hardhat compile
 npx hardhat run --network sepolia scripts/deploy.ts
 ```
+
+## Financial Analysis
+
 
 ## Interfaces
 
@@ -81,21 +86,7 @@ npx hardhat run --network sepolia scripts/deploy.ts
   - Link to return to the homepage
 - **Navigation:** Redirects users back to a functioning part of the website.
 
-## Developers
-
-- Abdurakhim Bakytzhan
-  - main frontend developer
-  - main blockchain developer 
-- Temirlan Torebekov
-  - main blockchain developer 
-- Azat Bekturganov
-  - secondary blockchain developer
-- Nursultan Tynyshbay
-  - secondary frontend developer
-
-## Contributing
-
-Interested in contributing to the CryptoKazakh NFT Marketplace? We welcome contributions of all kinds.
+## Designs
 
 ### Design FullHD
 ![FullHD](https://github.com/aBacoding/CryptoKazakh/assets/97093590/278bb6e5-2cbd-4abd-b8f2-2ad8ba6b4f72)
@@ -129,3 +120,21 @@ Interested in contributing to the CryptoKazakh NFT Marketplace? We welcome contr
 
 ### 404 page for Phone
 ![404 Phone](https://github.com/aBacoding/CryptoKazakh/assets/97093590/6229ca77-316d-4132-a59a-aa1e6fa04ddc)
+
+## Developers
+
+- Abdurakhim Bakytzhan
+  - main frontend developer
+  - main blockchain developer 
+- Temirlan Torebekov
+  - main blockchain developer 
+- Azat Bekturganov
+  - secondary blockchain developer
+- Nursultan Tynyshbay
+  - secondary frontend developer
+
+## Contributing
+
+Interested in contributing to the CryptoKazakh NFT Marketplace? We welcome contributions of all kinds.
+
+Developed with ❤️ by `[Abdurakhim Bakytzhan, Temirlan Torebekov, Azat Bekturganov, Nursultan Tynyshbay/CryptoKazakh]`
