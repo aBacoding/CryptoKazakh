@@ -36,27 +36,27 @@ npx hardhat run --network sepolia scripts/deploy.ts
 
 ### Costs for Clients (Users)
 
-#### Minting Artwork (`mintArtwork` Function)
+#### 1. Minting Artwork (`mintArtwork` Function)
 
 - **Cost:** The cost for a client to mint a new artwork is the `listingFee`, set at `0.01 ether`. This fee is mandatory to list the artwork in the gallery. Additionally, users should consider the gas fees required for executing this function on the Ethereum network.
 
-#### Purchasing Artwork (`purchaseArtwork` Function)
+#### 2. Purchasing Artwork (`purchaseArtwork` Function)
 
 - **Cost:** The buyer must pay the price of the artwork, as determined by the seller at the time of minting. This price is a fixed amount for each artwork. Gas fees are also applicable for the transaction.
 
 ### Potential Earnings or Losses for the Owner
 
-#### Minting Artwork
+#### 1. Minting Artwork
 
 - **Earnings:** The owner earns the `listingFee` (0.01 ether) for each artwork minted and listed. This represents a direct income source.
 - **Losses:** There are no direct losses from this function for the owner. However, costs associated with deploying and maintaining the smart contract should be considered.
 
-#### Purchasing Artwork
+#### 2. Purchasing Artwork
 
 - **Earnings:** For each artwork purchased, the owner earns the `listingFee` again. These fees are the primary revenue source for the owner.
 - **Losses:** There are no direct losses from artwork purchases. However, ongoing maintenance and potential updates to the smart contract may incur costs.
 
-### Additional Considerations
+#### 3. Additional Considerations
 
 - The owner does not receive a percentage of the artwork's sale price; their earnings are solely from the listing fees.
 - The contract currently lacks a mechanism for secondary sales or royalties, which could be a potential revenue stream in other NFT platforms.
