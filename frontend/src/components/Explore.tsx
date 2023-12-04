@@ -123,7 +123,7 @@ const Explore: React.FC = () => {
 							))}
 						</div>
 					) : (
-						<p>No NFTs available.</p>
+						<p>No NFTs available. Please install and connect your wallet. </p>
 					)}
 				</div>
 			</section>
