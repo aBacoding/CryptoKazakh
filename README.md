@@ -3,6 +3,7 @@ Welcome to the GitHub repository of CryptoKazakh, a unique digital marketplace d
 
 ## Table of Contents
 - [How to run the DApp?](#how-to-run-the-dapp)
+- [Smartcontract Explanation](#smartcontract-explanation)
 - [Financial Analysis](#financial-analysis)
 - [Interfaces](#interfaces)
   - [Homepage](#homepage)
@@ -30,6 +31,120 @@ git clone https://github.com/aBacoding/CryptoKazakh
 cd hardhat
 npx hardhat compile
 npx hardhat run --network sepolia scripts/deploy.ts
+```
+
+## Smartcontract Explanation
+```bash
+// SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
+
+// Importing OpenZeppelin's ERC721URIStorage and Counters contracts.
+// ERC721URIStorage is an ERC721 token with storage for a URI.
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+
+// Contract declaration for ArtCollectiveMarket, inheriting from ERC721URIStorage.
+contract ArtCollectiveMarket is ERC721URIStorage {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds; // Counter for token IDs.
+    Counters.Counter private _itemsSold; // Counter for items sold.
+
+    address payable owner; // Address of the contract owner.
+    uint256 listingFee = 0.01 ether; // Listing fee for minting an artwork.
+
+    // Struct to represent an artwork.
+    struct Artwork {
+        uint256 tokenId; // Unique ID of the artwork.
+        address payable owner; // Owner of the artwork.
+        address payable seller; // Seller of the artwork.
+        uint256 price; // Price of the artwork.
+        bool currentlyListed; // Whether the artwork is listed for sale.
+    }
+
+    // Mapping from token ID to its respective Artwork.
+    mapping(uint256 => Artwork) private idToArtwork;
+
+    // Constructor sets the name and symbol of the token and initializes the contract owner.
+    constructor() ERC721("ArtCollective", "ARTC") {
+        owner = payable(msg.sender);
+    }
+
+    // Function to retrieve the listing fee.
+    function getListingFee() public view returns (uint256) {
+        return listingFee;
+    }
+
+    // Function to mint new artwork. Requires the payment of listing fee.
+    function mintArtwork(string memory tokenURI, uint256 price) public payable returns (uint) {
+        require(msg.value == listingFee, "You gotta pay the gallery fee to list your artwork.");
+        require(price > 0, "This piece of art must have value!");
+        _tokenIds.increment(); // Incrementing the token ID counter.
+        uint256 newTokenId = _tokenIds.current(); // Getting the new token ID.
+        _safeMint(msg.sender, newTokenId); // Minting the token.
+        _setTokenURI(newTokenId, tokenURI); // Setting the token URI.
+        // Creating and mapping the new Artwork struct.
+        idToArtwork[newTokenId] = Artwork(newTokenId, payable(address(this)), payable(msg.sender), price, true);
+        _transfer(msg.sender, address(this), newTokenId); // Transferring the token.
+        return newTokenId;
+    }
+
+    // Function to browse listed artworks in the gallery.
+    function browseGallery() public view returns (Artwork[] memory) {
+        uint itemCount = _tokenIds.current(); // Total number of items minted.
+        uint listedItemCount = _tokenIds.current() - _itemsSold.current(); // Number of items currently listed.
+        Artwork[] memory items = new Artwork[](listedItemCount); // Array to store listed items.
+        uint currentIndex = 0;
+
+        for (uint i = 0; i < itemCount; i++) {
+            if (idToArtwork[i + 1].currentlyListed) {
+                uint currentId = i + 1;
+                Artwork storage currentItem = idToArtwork[currentId];
+                items[currentIndex] = currentItem; // Adding the item to the array.
+                currentIndex++;
+            }
+        }
+        return items; // Returning the array of listed items.
+    }
+
+    // Function to purchase an artwork.
+    function purchaseArtwork(uint256 tokenId) public payable {
+        uint price = idToArtwork[tokenId].price; // Price of the artwork.
+        require(msg.value == price, "The price must be equal to the artwork's listed price.");
+        address seller = idToArtwork[tokenId].seller; // Seller's address.
+        idToArtwork[tokenId].currentlyListed = false; // Marking the artwork as not listed.
+        idToArtwork[tokenId].owner = payable(msg.sender); // Setting the new owner.
+        _itemsSold.increment(); // Incrementing the sold items counter.
+        _transfer(address(this), msg.sender, tokenId); // Transferring the token to the buyer.
+        payable(owner).transfer(listingFee); // Transferring the listing fee to the owner.
+        payable(seller).transfer(msg.value); // Transferring the payment to the seller.
+    }
+
+    // Function to view the user's collection (both owned and sold items).
+    function myCollection() public view returns (Artwork[] memory) {
+        uint totalItemCount = _tokenIds.current(); // Total number of items minted.
+        uint itemCount = 0; // Counter for items belonging to the user.
+        uint currentIndex = 0;
+
+        // Counting items belonging to the user.
+        for (uint i = 0; i < totalItemCount; i++) {
+            if (idToArtwork[i + 1].owner == msg.sender || idToArtwork[i + 1].seller == msg.sender) {
+                itemCount++;
+            }
+        }
+
+        Artwork[] memory items = new Artwork[](itemCount); // Array to store the user's items.
+        for (uint i = 0; i < totalItemCount; i++) {
+            if (idToArtwork[i + 1].owner == msg.sender || idToArtwork[i + 1].seller == msg.sender) {
+                uint currentId = i + 1;
+                Artwork storage currentItem = idToArtwork[currentId];
+                items[currentIndex] = currentItem; // Adding the item to the array.
+                currentIndex++;
+            }
+        }
+        return items; // Returning the user's collection.
+    }
+}
+
 ```
 
 ## Financial Analysis
