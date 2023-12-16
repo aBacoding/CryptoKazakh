@@ -11,39 +11,34 @@ const Explore: React.FC = () => {
 
 	const fetchNFTs = async () => {
 		setIsLoading(true)
-		if (window.ethereum) {
-			const provider = new ethers.providers.Web3Provider(window.ethereum)
-			const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
-			const contractABI = require('../ArtCollectiveMarket.json').abi
-			const contract = new ethers.Contract(
-				contractAddress,
-				contractABI,
-				provider
-			)
+		const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
+		const contractABI = require('../ArtCollectiveMarket.json').abi
+		const contract = new ethers.Contract(
+			contractAddress,
+			contractABI,
+			ethers.getDefaultProvider()
+		)
 
-			try {
-				const items = await contract.browseGallery()
-				const itemsWithMetadata = await Promise.all(
-					items.map(async (item: any) => {
-						const metadataUri = await contract.tokenURI(item.tokenId)
-						const metadataResponse = await axios.get(
-							`https://ipfs.io/ipfs/${metadataUri}`
-						)
-						return {
-							...item,
-							title: metadataResponse.data.title,
-							image: metadataResponse.data.image,
-							avatar: metadataResponse.data.avatar,
-							price: ethers.utils.formatEther(item.price),
-						}
-					})
-				)
-				setNfts(itemsWithMetadata)
-			} catch (error) {
-				console.error('Error fetching NFTs: ', error)
-			}
-		} else {
-			console.log('Ethereum object not found, install MetaMask.')
+		try {
+			const items = await contract.browseGallery()
+			const itemsWithMetadata = await Promise.all(
+				items.map(async (item: any) => {
+					const metadataUri = await contract.tokenURI(item.tokenId)
+					const metadataResponse = await axios.get(
+						`https://ipfs.io/ipfs/${metadataUri}`
+					)
+					return {
+						...item,
+						title: metadataResponse.data.title,
+						image: metadataResponse.data.image,
+						avatar: metadataResponse.data.avatar,
+						price: ethers.utils.formatEther(item.price),
+					}
+				})
+			)
+			setNfts(itemsWithMetadata)
+		} catch (error) {
+			console.error('Error fetching NFTs: ', error)
 		}
 		setIsLoading(false)
 	}
