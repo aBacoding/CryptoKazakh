@@ -9,72 +9,72 @@ const Explore: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const fetchNFTs = async () => {
-        setIsLoading(true);
-        const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || '';
-        const contractABI = require('../ArtCollectiveMarket.json').abi;
+        setIsLoading(true)
+        const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
+        const contractABI = require('../ArtCollectiveMarket.json').abi
         const contract = new ethers.Contract(
             contractAddress,
             contractABI,
             ethers.getDefaultProvider()
-        );
+        )
 
         try {
-            const items = await contract.browseGallery();
+            const items = await contract.browseGallery()
             const itemsWithMetadata = await Promise.all(
                 items.map(async (item: any) => {
                     const metadataUri = await contract.tokenURI(item.tokenId);
                     const metadataResponse = await axios.get(
                         `https://ipfs.io/ipfs/${metadataUri}`
-                    );
+                    )
                     return {
                         ...item,
                         title: metadataResponse.data.title,
                         image: metadataResponse.data.image,
                         avatar: metadataResponse.data.avatar,
                         price: ethers.utils.formatEther(item.price),
-                    };
+                    }
                 })
-            );
-            setNfts(itemsWithMetadata);
+            )
+            setNfts(itemsWithMetadata)
         } catch (error) {
-            console.error('Error fetching NFTs: ', error);
+            console.error('Error fetching NFTs: ', error)
         }
-        setIsLoading(false);
+        setIsLoading(false)
     };
 
     const purchaseArtwork = async (tokenId: string, price: string) => {
         if (!window.ethereum) {
-            alert('Please install MetaMask to make a purchase.');
+            alert('Please install MetaMask to make a purchase.')
             return;
         }
 
         try {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            await provider.send('eth_requestAccounts', []);
-            const signer = provider.getSigner();
-            const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || '';
-            const contractABI = require('../ArtCollectiveMarket.json').abi;
-            const contract = new ethers.Contract(contractAddress, contractABI, signer);
+            const provider = new ethers.providers.Web3Provider(window.ethereum)
+            await provider.send('eth_requestAccounts', [])
+            const signer = provider.getSigner()
+            const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
+            const contractABI = require('../ArtCollectiveMarket.json').abi
+            const contract = new ethers.Contract(contractAddress, contractABI, signer)
 
             const transaction = await contract.purchaseArtwork(
                 ethers.BigNumber.from(tokenId),
                 { value: ethers.utils.parseEther(price) }
             );
 
-            await transaction.wait();
-            alert('Purchase successful!');
+            await transaction.wait()
+            alert('Purchase successful!')
 
             // Remove purchased NFT from the display
-            await fetchNFTs();
+            await fetchNFTs()
         } catch (error) {
-            console.error('Purchase failed: ', error);
-            alert('There was an error processing your purchase.');
+            console.error('Purchase failed: ', error)
+            alert('There was an error processing your purchase.')
         }
     };
 
     useEffect(() => {
         fetchNFTs();
-    }, []);
+    }, [])
 
     return (
         <>
