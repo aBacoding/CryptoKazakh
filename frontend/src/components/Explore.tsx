@@ -48,7 +48,7 @@ const Explore: React.FC = () => {
 
 	return (
 		<>
-			<Header userAddress={userAddress} setUserAddress={setUserAddress} />
+			<Header />
 			<section className='explore_section'>
 				<div className='container'>
 					<h2 className='explore_title'>Explore</h2>
