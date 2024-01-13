@@ -43,6 +43,36 @@ const Explore: React.FC = () => {
         setIsLoading(false);
     };
 
+    const purchaseArtwork = async (tokenId: string, price: string) => {
+        if (!window.ethereum) {
+            alert('Please install MetaMask to make a purchase.');
+            return;
+        }
+
+        try {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await provider.send('eth_requestAccounts', []);
+            const signer = provider.getSigner();
+            const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || '';
+            const contractABI = require('../ArtCollectiveMarket.json').abi;
+            const contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+            const transaction = await contract.purchaseArtwork(
+                ethers.BigNumber.from(tokenId),
+                { value: ethers.utils.parseEther(price) }
+            );
+
+            await transaction.wait();
+            alert('Purchase successful!');
+
+            // Remove purchased NFT from the display
+            await fetchNFTs();
+        } catch (error) {
+            console.error('Purchase failed: ', error);
+            alert('There was an error processing your purchase.');
+        }
+    };
+
     useEffect(() => {
         fetchNFTs();
     }, []);
@@ -77,13 +107,13 @@ const Explore: React.FC = () => {
                                             <div className='current-bid'>Current Bid</div>
                                             <p className='price'>{nft.price} ETH</p>
                                         </div>
-                                        {/* Optionally hide or disable the purchase button if no wallet is connected */}
-                                        {/* <button
+                                        <button
                                             className='place-bid'
-                                            disabled={!userAddress} // Disable if no user address
+                                            onClick={() => purchaseArtwork(nft.tokenId, nft.price)}
+                                            disabled={!userAddress}
                                         >
                                             Purchase
-                                        </button> */}
+                                        </button>
                                     </div>
                                 </div>
                             ))}
