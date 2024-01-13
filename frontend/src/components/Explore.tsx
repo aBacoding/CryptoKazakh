@@ -5,7 +5,6 @@ import '../styles/Explore.css';
 import Header from './Header';
 
 const Explore: React.FC = () => {
-    const [userAddress, setUserAddress] = useState<string | null>(null);
     const [nfts, setNfts] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -79,7 +78,7 @@ const Explore: React.FC = () => {
 
     return (
         <>
-            <Header userAddress={userAddress} setUserAddress={setUserAddress} />
+            <Header />
             <section className='explore_section'>
                 <div className='container'>
                     <h2 className='explore_title'>Explore</h2>
@@ -97,32 +96,34 @@ const Explore: React.FC = () => {
                                     </div>
                                     <div className='nft-info'>
                                         <h3>{nft.title}</h3>
-                                        <div className='artist'>
-                                            <img src={nft.avatar} alt='Artist Avatar' />
-                                            <span className='wallet-address'>
-                                                by @{nft.seller.substring(0, 6)}...
-                                            </span>
-                                        </div>
-                                        <div className='bid-info'>
-                                            <div className='current-bid'>Current Bid</div>
-                                            <p className='price'>{nft.price} ETH</p>
-                                        </div>
-                                        <button
-                                            className='place-bid'
-                                            onClick={() => purchaseArtwork(nft.tokenId, nft.price)}
-                                        >
-                                            Purchase
-                                        </button>
+                                    <div className='artist'>
+                                        <img src={nft.avatar} alt='Artist Avatar' />
+                                        <span className='wallet-address'>
+                                            by @{nft.seller.substring(0, 6)}...
+                                        </span>
                                     </div>
+                                    <div className='bid-info'>
+                                        <div className='current-bid'>Current Bid</div>
+                                        <p className='price'>{nft.price} ETH</p>
+                                    </div>
+                                    {/* Optionally hide or disable the purchase button if no wallet is connected */}
+                                    {/* <button
+                                        className='place-bid'
+                                        onClick={() => purchaseArtwork(nft.tokenId, nft.price)}
+                                        disabled={!userAddress} // Disable if no user address
+                                    >
+                                        Purchase
+                                    </button> */}
                                 </div>
-                            ))}
-                        </div>
-                    ) : (
-                        <p>No NFTs available. Please install and connect your wallet.</p>
-                    )}
-                </div>
-            </section>
-        </>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p>No NFTs available. Check back later!</p>
+                )}
+            </div>
+        </section>
+    </>
     );
 };
 
