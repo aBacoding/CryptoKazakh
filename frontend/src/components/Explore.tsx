@@ -11,35 +11,38 @@ const Explore: React.FC = () => {
 
     const fetchNFTs = async () => {
         setIsLoading(true);
-        const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || '';
-        const contractABI = require('../ArtCollectiveMarket.json').abi;
-        const contract = new ethers.Contract(
-            contractAddress,
-            contractABI,
-            ethers.getDefaultProvider()
-        );
+        if (window.ethereum) {
+			const provider = new ethers.providers.Web3Provider(window.ethereum)
+			const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || ''
+			const contractABI = require('../ArtCollectiveMarket.json').abi
+			const contract = new ethers.Contract(
+				contractAddress,
+				contractABI,
+				provider
+			);
 
         try {
-            const items = await contract.browseGallery();
-            const itemsWithMetadata = await Promise.all(
-                items.map(async (item: any) => {
-                    const metadataUri = await contract.tokenURI(item.tokenId);
-                    const metadataResponse = await axios.get(
-                        `https://ipfs.io/ipfs/${metadataUri}`
-                    );
-                    return {
-                        ...item,
-                        title: metadataResponse.data.title,
-                        image: metadataResponse.data.image,
-                        avatar: metadataResponse.data.avatar,
-                        price: ethers.utils.formatEther(item.price),
-                    };
-                })
-            );
-            setNfts(itemsWithMetadata);
-        } catch (error) {
-            console.error('Error fetching NFTs: ', error);
-        }
+				const items = await contract.browseGallery()
+				const itemsWithMetadata = await Promise.all(
+					items.map(async (item: any) => {
+						const metadataUri = await contract.tokenURI(item.tokenId)
+						const metadataResponse = await axios.get(
+							`https://ipfs.io/ipfs/${metadataUri}`
+						)
+						return {
+							...item,
+							title: metadataResponse.data.title,
+							image: metadataResponse.data.image,
+							avatar: metadataResponse.data.avatar,
+							price: ethers.utils.formatEther(item.price),
+						}
+					})
+				)
+				setNfts(itemsWithMetadata)
+			} catch (error) {
+				console.error('Error fetching NFTs: ', error)
+			}
+		}
         setIsLoading(false);
     };
 
