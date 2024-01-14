@@ -113,7 +113,6 @@ const Explore: React.FC = () => {
                                         <button
                                             className='place-bid'
                                             onClick={() => purchaseArtwork(nft.tokenId, nft.price)}
-                                            disabled={!userAddress}
                                         >
                                             Purchase
                                         </button>
