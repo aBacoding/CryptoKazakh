@@ -39,6 +39,7 @@
 	padding: 22px 30px;
 	border: 1px solid #ffce4e;
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 .header_btn:hover,
